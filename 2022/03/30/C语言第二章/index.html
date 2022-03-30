@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="C语言第二章 C程序和C编译器简介只涉及概念总结，不包括知识点讲解及使用 C语言特点：简洁、功能强大、执行效率高、易编易懂 C99：&#x2F;&#x2F;单行注释、变量定义位置、布尔类型、函数显式声明返回类型、可变长数组、指针互斥的访问限制、内联函数、非void类型函数必须return、复数及运算等 main（）函数也称为主函数 预编译命令以#开头，后面没有分号函数头行末不能加分号函数头后一对大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/03/10/hello-world/index.html">
+<meta property="og:title" content="C语言第二章">
+<meta property="og:url" content="http://example.com/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="C语言第二章 C程序和C编译器简介只涉及概念总结，不包括知识点讲解及使用 C语言特点：简洁、功能强大、执行效率高、易编易懂 C99：&#x2F;&#x2F;单行注释、变量定义位置、布尔类型、函数显式声明返回类型、可变长数组、指针互斥的访问限制、内联函数、非void类型函数必须return、复数及运算等 main（）函数也称为主函数 预编译命令以#开头，后面没有分号函数头行末不能加分号函数头后一对大">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-10T11:58:53.480Z">
-<meta property="article:modified_time" content="2022-03-10T11:40:39.901Z">
+<meta property="article:published_time" content="2022-03-30T11:53:22.000Z">
+<meta property="article:modified_time" content="2022-03-30T11:56:44.618Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/03/10/hello-world/">
+<link rel="canonical" href="http://example.com/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Hello World | 潜龙渊</title>
+  <title>C语言第二章 | 潜龙渊</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          C语言第二章
         </h1>
 
         <div class="post-meta">
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-10 19:58:53 / 修改时间：19:40:39" itemprop="dateCreated datePublished" datetime="2022-03-10T19:58:53+08:00">2022-03-10</time>
+              <time title="创建时间：2022-03-30 19:53:22 / 修改时间：19:56:44" itemprop="dateCreated datePublished" datetime="2022-03-30T19:53:22+08:00">2022-03-30</time>
             </span>
 
           
@@ -188,19 +188,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h1><h1 id="第二章-C程序和C编译器简介"><a href="#第二章-C程序和C编译器简介" class="headerlink" title="第二章 C程序和C编译器简介"></a>第二章 C程序和C编译器简介</h1><p><em>只涉及概念总结，不包括知识点讲解及使用</em></p>
+<p>C语言特点：简洁、功能强大、执行效率高、易编易懂</p>
+<p>C99：&#x2F;&#x2F;单行注释、变量定义位置、布尔类型、函数显式声明返回类型、可变长数组、指针互斥的访问限制、内联函数、非void类型函数必须return、复数及运算等</p>
+<p>main（）函数也称为主函数</p>
+<p>预编译命令以#开头，后面没有分号<br>函数头行末不能加分号<br>函数头后一对大括号及所包含的内容称为 <strong>函数体</strong></p>
+<p>注释对程序运行结果无影响，编译时注释都被忽略</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 跨行注释 */</span><br><span class="line">//单行注释</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>在C语言中，存储数据必须定义变量<br><strong>变量</strong>是内存的一段存储区域，用来存数据；参数也是变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%d含义是从键盘取回一个整数</span><br><span class="line">&amp;a表示整数要存放的位置</span><br><span class="line">&amp;是取地址运算符</span><br></pre></td></tr></table></figure>
+<p>C程序构成特点：<br>1程序有一个或多个源文件组成<br>2.函数时C程序重要组成部分<br>3.一个函数有且只有一个主函数，主函数可在其他函数前、后、中；<br>4.函数是由函数头和函数体组成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">函数头指大括号&#123;&#125;之前的部分</span><br><span class="line">函数体指大括号所包含的内容（可为空）</span><br><span class="line">函数体的内容按顺序可分为声明部分（数据声明、函数声明）和执行部分（数据输入部分、计算部分、输出部分）</span><br></pre></td></tr></table></figure>
+<p>5.每个声明和语句的最后必须有一个分号，分号表示声明或语句结束；<br>  一行代码可以写一个或几个语句，也可一个语句写在几行上<br>6.输入输出靠调用函数完成<br>7.注释可以对整个程序或整个函数的说明，也可以是某一条语句的说明</p>
+<p>Save存盘，Write to另存相当于Save as<br>编译发现 <strong>语法错误</strong>时，光条停在第一个错误语句的最后一行，因此检查错误不仅检查光条所在行，还要检查光条上面一行或几行，直到上一个分号为止。<br>程序的语法错误在编译时发现，逻辑错误需要调试<br>C编译器部分略</p>
 
     </div>
 
@@ -215,11 +216,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="next" title="机器学习">
-      机器学习 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="C语言第一章">
+      <i class="fa fa-chevron-left"></i> C语言第一章
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -278,7 +279,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">C语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-C%E7%A8%8B%E5%BA%8F%E5%92%8CC%E7%BC%96%E8%AF%91%E5%99%A8%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">第二章 C程序和C编译器简介</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
