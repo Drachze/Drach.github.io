@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第八章 变量的作用域和存储类型变量的作用域变量的作用域就是允许使用该变量的程序范围 C语言的变量依照作用域的不同可以分为全局变量和局部变量 局部变量：在大括号内定义，其作用于是包括他的那对大括号所包含变量同等包含的范围。 全局变量 不在大括号内定义的变量（不包括形参） 全局变量作用域的扩展:全局变量的作用域可以扩展。 P159 同名变量的辨析辨别方法：先看出现变量名的地方最里层括号内有无该变量的定">
+  <meta name="description" content="第八章 变量的作用域和存储类型变量的作用域变量的作用域就是允许使用该变量的程序范围。 C语言的变量依照作用域的不同可以分为全局变量和局部变量。 局部变量：在大括号内定义，其作用于是包括他的那对大括号所包含变量同等包含的范围。 全局变量：不在大括号内定义的变量（不包括形参）。 全局变量作用域的扩展:全局变量的作用域可以扩展。 P159 同名变量的辨析辨别方法：先看出现变量名的地方最里层括号内有无该变">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言第八、九章">
+<meta property="og:title" content="第八章变量、第九章预编译">
 <meta property="og:url" content="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E3%80%81%E4%B9%9D%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第八章 变量的作用域和存储类型变量的作用域变量的作用域就是允许使用该变量的程序范围 C语言的变量依照作用域的不同可以分为全局变量和局部变量 局部变量：在大括号内定义，其作用于是包括他的那对大括号所包含变量同等包含的范围。 全局变量 不在大括号内定义的变量（不包括形参） 全局变量作用域的扩展:全局变量的作用域可以扩展。 P159 同名变量的辨析辨别方法：先看出现变量名的地方最里层括号内有无该变量的定">
+<meta property="og:description" content="第八章 变量的作用域和存储类型变量的作用域变量的作用域就是允许使用该变量的程序范围。 C语言的变量依照作用域的不同可以分为全局变量和局部变量。 局部变量：在大括号内定义，其作用于是包括他的那对大括号所包含变量同等包含的范围。 全局变量：不在大括号内定义的变量（不包括形参）。 全局变量作用域的扩展:全局变量的作用域可以扩展。 P159 同名变量的辨析辨别方法：先看出现变量名的地方最里层括号内有无该变">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-31T12:08:29.000Z">
-<meta property="article:modified_time" content="2022-03-31T12:24:29.074Z">
+<meta property="article:modified_time" content="2022-04-01T13:57:16.815Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>C语言第八、九章 | 潜龙渊</title>
+  <title>第八章变量、第九章预编译 | 潜龙渊</title>
   
 
 
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C语言第八、九章
+          第八章变量、第九章预编译
         </h1>
 
         <div class="post-meta">
@@ -182,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-31 20:08:29 / 修改时间：20:24:29" itemprop="dateCreated datePublished" datetime="2022-03-31T20:08:29+08:00">2022-03-31</time>
+              <time title="创建时间：2022-03-31 20:08:29" itemprop="dateCreated datePublished" datetime="2022-03-31T20:08:29+08:00">2022-03-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-01 21:57:16" itemprop="dateModified" datetime="2022-04-01T21:57:16+08:00">2022-04-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -207,18 +213,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第八章-变量的作用域和存储类型"><a href="#第八章-变量的作用域和存储类型" class="headerlink" title="第八章 变量的作用域和存储类型"></a>第八章 变量的作用域和存储类型</h1><h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>变量的作用域就是允许使用该变量的程序范围</p>
-<p>C语言的变量依照作用域的不同可以分为全局变量和局部变量</p>
+        <h1 id="第八章-变量的作用域和存储类型"><a href="#第八章-变量的作用域和存储类型" class="headerlink" title="第八章 变量的作用域和存储类型"></a>第八章 变量的作用域和存储类型</h1><h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>变量的作用域就是允许使用该变量的程序范围。</p>
+<p>C语言的变量依照作用域的不同可以分为全局变量和局部变量。</p>
 <p>局部变量：在大括号内定义，其作用于是包括他的那对大括号所包含变量同等包含的范围。</p>
-<p>全局变量 不在大括号内定义的变量（不包括形参）</p>
+<p>全局变量：不在大括号内定义的变量（不包括形参）。</p>
 <p>全局变量作用域的扩展:<br>全局变量的作用域可以扩展。<code> P159</code></p>
-<h2 id="同名变量的辨析"><a href="#同名变量的辨析" class="headerlink" title="同名变量的辨析"></a>同名变量的辨析</h2><p>辨别方法：先看出现变量名的地方最里层括号内有无该变量的定义（或声明，下同），若有，则可以确定其为局部；若无，向外扩大一层括号，继续寻找变量定义，若找到了，也可确定，若还找不到，继续扩大范围······知道找遍源文件。</p>
+<h2 id="同名变量的辨析"><a href="#同名变量的辨析" class="headerlink" title="同名变量的辨析"></a>同名变量的辨析</h2><p><strong>辨别方法：先看出现变量名的地方最里层括号内有无该变量的定义（或声明，下同），若有，则可以确定其为局部；若无，向外扩大一层括号，继续寻找变量定义，若找到了，也可确定，若还找不到，继续扩大范围······直到找遍源文件。</strong></p>
 <p>变量的作用域越小，其级别越高，作用域越大级别越低。在作用域重合的情况下，编译器总是先认定他是作用域小的变量。</p>
 <h2 id="变量的存储类别和生存期"><a href="#变量的存储类别和生存期" class="headerlink" title="变量的存储类别和生存期"></a>变量的存储类别和生存期</h2><p>静态变量：在把程序（可执行文件）装载到内存时就在内存中开辟了空间，到程序运行结束时释放空间。程序运行期间，<strong>其空间只开辟一次，也只释放一次。</strong><br>动态变量：程序运行期间根据需要临时分配空间，用完即释放，下次需要的时候再分配，用完再释放······<strong>可能会多次分配，多次释放</strong>。</p>
-<h3 id="内存的存储区域"><a href="#内存的存储区域" class="headerlink" title="内存的存储区域"></a>内存的存储区域</h3><p>内存的存储区域：代码区、静态存储区、堆区、栈区<code>P162</code></p>
+<h3 id="内存的存储区域"><a href="#内存的存储区域" class="headerlink" title="内存的存储区域"></a>内存的存储区域</h3><p>内存的存储区域：代码区（存储可执行文件的代码）、静态存储区（存储静态变量）、堆区（供用户进行动态分配-malloc）、栈区(存储动态数据)</p>
 <h3 id="动态变量"><a href="#动态变量" class="headerlink" title="动态变量"></a>动态变量</h3><p>种类：<br>（1）自动变量（局部变量，用auto声明或省略auto）<br>（2）寄存器变量（局部变量，用register声明）</p>
 <p><strong>动态变量一定是局部的</strong></p>
-<p>自动变量和寄存器变量的区别：自动变量是在内存栈区分配空间来存储数据，而寄存器变量时借用CPU中的寄存器来存储数据，不占内存。后者在进行运算时可以省去从内存中取出数据、计算出结果后再存回内存这两段时间的开销，可以提高程序的运行效率。</p>
+<p><strong>自动变量和寄存器变量的区别：自动变量是在内存栈区分配空间来存储数据，而寄存器变量时借用CPU中的寄存器来存储数据，不占内存。后者在进行运算时可以省去从内存中取出数据、计算出结果后再存回内存这两段时间的开销，可以提高程序的运行效率。</strong></p>
 <p>动态变量的特点：<br>（1）每次程序中执行到变量的作用域时就给变量分配空间，离开作用域时释放空间分配空间的次数和释放空间的次数总是相等的。<br>（2）若定义变量时规定了处置，则每次分配空间时，都用该值对变量初始化，分配及此空间，就进行几次初始化。<br>（3）若变量定义是未规定初值，则变量的值不确定。</p>
 <h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><p>静态变量分为全局变量（static、extern）和静态局部变量（static声明的局部变量），都是在内存的静态存储区分配空间。</p>
 <p>静态变量的特点：<br>（1）在程序开始运行之前（装在.exe文件时）分配空间，到整个程序结束后才释放空间，整个过程只分配一次空间，也只释放一次空间。<br>（2）若定义变量时规定了初值，则给变量分配空间时，要用该值对变量进行初始化，且整个程序运行期间只初始化一次。若变量定义时未规定初值，则变量的值为0.</p>
@@ -228,8 +234,10 @@
 <p><code>只有等到编译时，才会判断源程序中每一部分的含义，包括数据是什么类型，有没有语法错误等。</code></p>
 <h4 id="宏展开"><a href="#宏展开" class="headerlink" title="宏展开"></a>宏展开</h4><p>定义宏的目的，是为了在程序中用宏名代替后面的字符序列，简化输入、提高程序的可读性。</p>
 <p><code>宏定义是命令，所以行尾通常都不写分号，但不是不能写</code></p>
-<p>宏展开时，只是用字符序列替换宏名，除此之外不做任何其他处理；展开后是否有语法错误，在预处理阶段不做判断，宏展开仅做简单的文字替换。</p>
+<p>宏展开：编译预处理时将宏名换回原来的字符序列。<br>宏展开时，只是用字符序列替换宏名，除此之外不做任何其他处理（语法检查、参数求解）；展开后是否有语法错误，在预处理阶段不做判断，宏展开仅做简单的文字替换。</p>
+<p><strong>使不使用宏定义对最终的可执行文件没有区别</strong></p>
 <h3 id="有参宏定义"><a href="#有参宏定义" class="headerlink" title="有参宏定义"></a>有参宏定义</h3><h4 id="定义格式-1"><a href="#定义格式-1" class="headerlink" title="定义格式"></a>定义格式</h4><p>#define 宏名 (参数) 字符序列</p>
+<p><strong>宏可以嵌套使用，但函数不可以嵌套使用</strong></p>
 <h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p>C语言中的文件包含有两种格式：<br>#include &lt;被包含文件名&gt; <code>常用来包含头文件</code> 查找范围更广<br>#include “被包含文件名” <code>常用来包含源文件</code></p>
 <p>文件包含的作用时找到被包含文件，将其全部内容<strong>复制</strong>并粘贴到包含文件中。</p>
 <h3 id="条件编译"><a href="#条件编译" class="headerlink" title="条件编译"></a>条件编译</h3><p><code>P173</code></p>
@@ -248,8 +256,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E7%AB%A0/" rel="prev" title="C语言第七章">
-      <i class="fa fa-chevron-left"></i> C语言第七章
+    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E7%AB%A0/" rel="prev" title="第七章函数">
+      <i class="fa fa-chevron-left"></i> 第七章函数
     </a></div>
       <div class="post-nav-item"></div>
     </div>

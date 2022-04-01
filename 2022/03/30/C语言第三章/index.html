@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第三章 C编程基础知识常量和变量常量：编译时已经确定，在程序运行时不发生变化变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。存储地址的变量称为指针变量 小端模式：存数据时先存低字节，再存高字节 字节数：char 1，short 2，double 8，其余常用变量都为4 标识符：（1）英文字母、数字、下划线组成，不能以数字开头（2）区分大小写（3）不允许用关键字作为标识符">
+  <meta name="description" content="第三章 C编程基础知识常量和变量常量：编译时已经确定，在程序运行时不发生变化 。常数不是常量；常量除了常数（整型常量、实型常量），还包括字符常量、字符串常量、符号常量等。变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。存储地址的变量称为指针变量 小端模式：存数据时先存低字节，再存高字节 字节数：char 1，short 2，double 8，其余常用变量都为4 变量定义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言第三章">
+<meta property="og:title" content="第三章编程基础知识">
 <meta property="og:url" content="http://example.com/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第三章 C编程基础知识常量和变量常量：编译时已经确定，在程序运行时不发生变化变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。存储地址的变量称为指针变量 小端模式：存数据时先存低字节，再存高字节 字节数：char 1，short 2，double 8，其余常用变量都为4 标识符：（1）英文字母、数字、下划线组成，不能以数字开头（2）区分大小写（3）不允许用关键字作为标识符">
+<meta property="og:description" content="第三章 C编程基础知识常量和变量常量：编译时已经确定，在程序运行时不发生变化 。常数不是常量；常量除了常数（整型常量、实型常量），还包括字符常量、字符串常量、符号常量等。变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。存储地址的变量称为指针变量 小端模式：存数据时先存低字节，再存高字节 字节数：char 1，short 2，double 8，其余常用变量都为4 变量定义">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-30T13:19:16.000Z">
-<meta property="article:modified_time" content="2022-03-31T12:23:54.799Z">
+<meta property="article:modified_time" content="2022-04-01T12:55:24.109Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>C语言第三章 | 潜龙渊</title>
+  <title>第三章编程基础知识 | 潜龙渊</title>
   
 
 
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C语言第三章
+          第三章编程基础知识
         </h1>
 
         <div class="post-meta">
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-31 20:23:54" itemprop="dateModified" datetime="2022-03-31T20:23:54+08:00">2022-03-31</time>
+                <time title="修改时间：2022-04-01 20:55:24" itemprop="dateModified" datetime="2022-04-01T20:55:24+08:00">2022-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,48 +213,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第三章-C编程基础知识"><a href="#第三章-C编程基础知识" class="headerlink" title="第三章 C编程基础知识"></a>第三章 C编程基础知识</h1><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><p>常量：编译时已经确定，在程序运行时不发生变化<br>变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。<br>存储地址的变量称为<strong>指针变量</strong></p>
+        <h1 id="第三章-C编程基础知识"><a href="#第三章-C编程基础知识" class="headerlink" title="第三章 C编程基础知识"></a>第三章 C编程基础知识</h1><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><p>常量：编译时已经确定，在程序运行时不发生变化 。<code>常数不是常量；常量除了常数（整型常量、实型常量），还包括字符常量、字符串常量、符号常量等。</code><br>变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。<br>存储地址的变量称为<strong>指针变量</strong></p>
 <p>小端模式：存数据时先存低字节，再存高字节</p>
 <p>字节数：<strong>char 1，short 2，double 8，其余常用变量都为4</strong></p>
+<p>变量定义的位置应该在同级别的执行语句之前（C99取消了这条规定）</p>
 <p>标识符：<br>（1）<strong>英文字母、数字、下划线组成，不能以数字开头</strong><br>（2）区分大小写<br>（3）不允许用关键字作为标识符<br><code>关键字指已经赋予一定含义的字符序列，如int、float</code><br>（4）标识符有长度限制，超过限制，后面的字符不起作用<br> （5）见名知意</p>
-<p>变量的地址指的是变量在内存中所处的位置，其起始位置称为变量的地址。</p>
-<p><strong>赋值</strong>：在给变量分配空间的任务完成后，再给变量存放数据（两次执行）<br><strong>赋初值</strong>：再给变量分配空间的时候就向其中存放数据。（一次执行完）</p>
-<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="整形数据"><a href="#整形数据" class="headerlink" title="整形数据"></a>整形数据</h3><p>100的表示方式：十进制100，八进制0144、十六进制0x64；<strong>注意程序中不允许使用二进制</strong></p>
+<p>每个变量都有值和地址两个属性；<code>但不是仅有这两个属性，还可以有类型等属性</code><br>变量的值指的是变量在内存中所存的内容；<br>变量的地址指的是变量在内存中所处的位置，其起始位置称为变量的地址。</p>
+<p>定义变量的目的是为了存储数据。</p>
+<p><strong>赋值</strong>：在给变量分配空间的任务完成后，再给变量存放数据，赋值就是存储：把赋值号右边表达式的值计算出来然后存储到左边变量的内存空间。（两次执行）<br><strong>赋初值</strong>：再给变量分配空间的时候就向其中存放数据。（一次执行完）</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>C语言的数据类型分为基本类型和构造类型，基本类型指的是系统固有的类型，也是常用的类型；构造类型指的是用户自定义出来的类型。</p>
+<h3 id="整型数据"><a href="#整型数据" class="headerlink" title="整型数据"></a>整型数据</h3><p>程序中用到整型常量时，可以用3种进制：十进制、八进制和十六进制。<br>100的表示方式：十进制100，八进制0144、十六进制0x64；<strong>注意程序中不允许使用二进制</strong></p>
 <p>%d表示十进制输出整数，%o表示八进制，%x或%X表示十六进制，加上L或l表示输出长整数，加上h表示输出短整数，无符号整数用%u</p>
-<h3 id="实型数据"><a href="#实型数据" class="headerlink" title="实型数据"></a>实型数据</h3><p>带小数点的常量称为实型常量</p>
+<h3 id="实型数据"><a href="#实型数据" class="headerlink" title="实型数据"></a>实型数据</h3><h4 id="实型常量"><a href="#实型常量" class="headerlink" title="实型常量"></a>实型常量</h4><p>带小数点的常量称为实型常量</p>
 <p>（1）小数形式 <code>3.14</code> 当一个数是纯小数时，小数点前面的0可以省略<br>（2）<strong>指数形式 <code>1.25E-2 即1.25*10^-2</code> E前数字，E后整</strong><br>实型常量有单精度F&#x2F;f（float）和双精度L&#x2F;l（double）两种方式，有效数字分别为7位、15位，最后一位近似位。</p>
-<p><code>实型数据的存储P43</code></p>
+<h4 id="实型数据的存储"><a href="#实型数据的存储" class="headerlink" title="实型数据的存储"></a>实型数据的存储</h4><p>实型数据的存储，对于单精度和双精度的数据，都是以浮点数的方式存储.<br>格式为：(符号)X M X2^n，其中，n是指数，M必须满足：1.0 &lt;&#x3D; M &lt; 2.0<br><code>30.0表示为 +1.875 X 2^4</code></p>
+<p>float型数据存储空间的分配：</p>
+<table>
+<thead>
+<tr>
+<th>符号位(0或1)</th>
+<th>指数部分（n+127）</th>
+<th>小数部分（M-1）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>占1位[第31位]</td>
+<td>占8位[第30位~第23位]</td>
+<td>占23位[第22位~第00位]</td>
+</tr>
+<tr>
+<td><code>P43</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <p>实数的存储不都是精确的。</p>
 <p>%f小数形式输出，默认输出6位小数（其他形式%.2f,指定两位小数）<br>%e(%E)指数形式输出，小数点前有且仅有1位非0的有效数字</p>
-<h3 id="字符型数据"><a href="#字符型数据" class="headerlink" title="字符型数据"></a>字符型数据</h3><p>字符放 *’ ‘*中，<strong>单引号</strong>有新的含义-定界符</p>
-<p>反斜线 “ \ ” 转义字符</p>
-<p>C语言认为字符也有大小，即其ASCII码。</p>
+<h3 id="字符型数据"><a href="#字符型数据" class="headerlink" title="字符型数据"></a>字符型数据</h3><p><strong>单个的字符是字符常量</strong></p>
+<p>字符放 ‘  ‘ 中，<strong>单引号</strong>有新的含义-定界符</p>
+<p>反斜线   \   转义字符</p>
+<p><strong>C语言认为字符也有大小，即其ASCII码。</strong><br>48 - 0<br>57 - 9<br>65 - A<br>90 - Z<br>97 - a<br>122 -z<br>大小写字母差了32</p>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>置于<strong>双引号</strong>中，双引号中可以没有字符，表示空串</p>
 <p><strong>C语言只有字符串常量，没有字符串变量</strong></p>
 <p>存储字符串时，最后多存一个空字符’\0’<br>空字符的ASCII是0，表示’\0’</p>
 <p>空字符和空格不是同一个字符，空为0，空格为32<br><strong>“A”和’A’不同，字符串结尾多一个空字符。</strong></p>
 <p>输出：%s</p>
-<h2 id="符号常量和常变量"><a href="#符号常量和常变量" class="headerlink" title="符号常量和常变量"></a>符号常量和常变量</h2><h3 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h3><p><strong>符号常量的定义是一条命令，不是语句，后面没有分号</strong></p>
+<p><strong>对于数据的存取</strong>：char型数据存储其ASCII码值，short、int、long型数据存储补码，float和double型数据按IEEE754标准所规定的格式存储</p>
+<h2 id="符号常量和常变量"><a href="#符号常量和常变量" class="headerlink" title="符号常量和常变量"></a>符号常量和常变量</h2><h3 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h3><p>符号常量的定义是一条命令，不是语句，后面<strong>不需要</strong>分号</p>
 <p><em>编译预处理命令，称为宏定义</em></p>
 <p>使用方便、便于修改、增加可读性</p>
-<p>符号常量只是一个符号，不是变量，<strong>内存中没有空间</strong>，所以不能赋值</p>
+<p>符号常量只是一个符号，不是变量，<strong>内存中没有空间</strong>，所以不能赋值<br><code> #define PI = 3.1415926 X</code><br><code>#define PI   3.1415926 √</code></p>
 <p><code>符号常量名通常使用大写字母</code></p>
 <h3 id="常变量"><a href="#常变量" class="headerlink" title="常变量"></a>常变量</h3><p>const开头</p>
-<p>常变量定义时必须初始化，为变量赋初值</p>
+<p><strong>常变量定义时必须初始化</strong>，为变量赋初值</p>
 <p><strong>常变量的定义是一条语句，后面有分号</strong></p>
 <p><strong>常变量只可以赋初值，不能赋值，因为赋值等于改写</strong></p>
-<h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>求余运算的结果，其符号应该与%前面那个数的符号相同</p>
-<p>求余的两个量必须是整数</p>
-<p>+（正号）、—（负号）是单目运算符，只需要一个运算量（即操作数）</p>
+<p>定义常变量之后，程序中可以随时使用它，但不能改变它。</p>
+<h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>求余运算的结果，其符号应该与 % 前面那个数的符号相同。</p>
+<p><strong>求余的两个量必须是整数。</strong></p>
+<p>+（正号）、—（负号）是单目运算符，只需要一个运算量。（即操作数）</p>
 <p>左结合性：当两个运算符优先级别相同时，先算左面。</p>
-<p>两个整数运算，最终结果还是整数，一般向零取整而非四舍五入</p>
-<h3 id="赋值运算符和赋值表达式"><a href="#赋值运算符和赋值表达式" class="headerlink" title="赋值运算符和赋值表达式"></a>赋值运算符和赋值表达式</h3><p>左值： 可以出现在赋值号左面的式子</p>
-<p><strong>左值必须有内存空间且允许赋值，常用的左值是变量，但常变量不是左值</strong></p>
-<p>赋值表达式也有值，一个赋值表达式的值，等于赋值后左边变量的值</p>
-<h3 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h3><p>自增自减运算符：++、–<br><code>相当于赋值运算，因此只能作用于变量，故无法作用于表达式和常量</code></p>
-<p>逗号运算符：，<br>双目运算符，优先级最低，逗号表达式的值等于逗号后面式子的值。<code>先求解前面表达式，后求解后面表达式，值为后面的表达式</code></p>
-<p>类型转换运算符：<br>格式：（类型名）（表达式）</p>
-<h2 id="数据的类型转换"><a href="#数据的类型转换" class="headerlink" title="数据的类型转换"></a>数据的类型转换</h2><p>（1）参与运算的操作数若有char、short型，无条件转为int，若有float，无条件转为double（提高精确度），不管类型是否相同<br>（2）若参与运算的操作数类型仍不同，则低类型数据转换为高数据类型。<code>由低到高 int 、unsigned、long 、double</code></p>
+<p>两个整数运算，最终结果还是整数，一般向零取整而非四舍五入。<br>若想结果是实数，则要将一个数变成实数。<code>5./9</code></p>
+<h3 id="赋值运算符和赋值表达式"><a href="#赋值运算符和赋值表达式" class="headerlink" title="赋值运算符和赋值表达式"></a>赋值运算符和赋值表达式</h3><p>左值： 可以出现在赋值号左面的式子。</p>
+<p><strong>左值必须有内存空间且允许赋值，常用的左值是变量，但常变量不是左值</strong><br><code>常变量允许赋初值，但不允许赋值</code></p>
+<p>赋值表达式也有值，一个赋值表达式的值，等于赋值后左边变量的值。</p>
+<h3 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h3><p>自增自减运算符：++、–<br>表达式++i的值是加1之后的i（先+1），而表达式i++的值是加1之前的i（运算后i+1）</p>
+<p><code>相当于赋值运算，因此只能作用于变量，故无法作用于表达式和常量</code></p>
+<p>逗号运算符：，<br>双目运算符，优先级最低，逗号表达式的值等于逗号后面式子的值。<code>先求解前面表达式，后求解后面表达式，值为后面的表达式，可不断嵌套式子1,式子2,式子3······</code></p>
+<p>类型转换运算符：把表达式的值强制转化为指定的类型。<br>格式：（类型名）（表达式）</p>
+<h2 id="数据的类型转换"><a href="#数据的类型转换" class="headerlink" title="数据的类型转换"></a>数据的类型转换</h2><p>（1）参与运算的操作数若有char、short型，无条件转为int，若有float，无条件转为double（提高精确度），不管类型是否相同。<br>（2）若参与运算的操作数类型仍不同，则低类型数据转换为高数据类型。<code>由低到高 int 、unsigned、long 、double</code></p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a><em>习题</em></h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>int x &#x3D; 10,y &#x3D; 3;printf(“%d,%d\n”,x–,–y);的输出结果（<strong>D</strong>）<br>(A)10 2<br>(B)10,3<br>(C)9,3<br>(D)10,2 </p>
+<p>设有定义“char c &#x3D; “CHINA”;”,则下面说法正确的是（<strong>D</strong>）<br>(A）c是一个字符串变量<br>(B) c占用6个字节的内存<br>(C) c的有效字符个数是5<br>(D) 语句错误，无法编译</p>
+<p>属于合法的字符常量的是（B）<br>(A)’\084’<code>八进制</code><br>(B）’\x43’<code>十六进制</code><br>(C)’ab’<br>(D)”\0”</p>
+<h3 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h3><p>表达式（a &#x3D; 1, 2, 3, a）是一个（<strong>赋值</strong>）表达式，其值为（<strong>1</strong>）</p>
+<p>表达式（（a &#x3D; 3*5，a * 4）,a + 15）的值为（<strong>30</strong>），执行后a的值为（<strong>15</strong>）</p>
 
     </div>
 
@@ -270,12 +302,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="prev" title="C语言第二章">
-      <i class="fa fa-chevron-left"></i> C语言第二章
+    <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="prev" title="第二章C程序">
+      <i class="fa fa-chevron-left"></i> 第二章C程序
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/" rel="next" title="C语言第四章">
-      C语言第四章 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/" rel="next" title="第四章顺序结构">
+      第四章顺序结构 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -335,7 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-C%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">第三章 C编程基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">常量和变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E5%BD%A2%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">整形数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.2.</span> <span class="nav-text">实型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">字符型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.4.</span> <span class="nav-text">字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E5%B8%B8%E9%87%8F%E5%92%8C%E5%B8%B8%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">符号常量和常变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E5%B8%B8%E9%87%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">符号常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">常变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">运算符和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.4.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%B5%8B%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">赋值运算符和赋值表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.4.3.</span> <span class="nav-text">其他运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.5.</span> <span class="nav-text">数据的类型转换</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-C%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">第三章 C编程基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">常量和变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">整型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.2.</span> <span class="nav-text">实型数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E5%9E%8B%E5%B8%B8%E9%87%8F"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">实型常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">实型数据的存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">字符型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.4.</span> <span class="nav-text">字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E5%B8%B8%E9%87%8F%E5%92%8C%E5%B8%B8%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">符号常量和常变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E5%B8%B8%E9%87%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">符号常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">常变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">运算符和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.4.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%B5%8B%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">赋值运算符和赋值表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.4.3.</span> <span class="nav-text">其他运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.5.</span> <span class="nav-text">数据的类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9"><span class="nav-number">1.6.1.</span> <span class="nav-text">选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E7%A9%BA"><span class="nav-number">1.6.2.</span> <span class="nav-text">填空</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
