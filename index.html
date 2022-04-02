@@ -157,6 +157,173 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="君不二">
+      <meta itemprop="description" content="高山仰止 景行行之">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潜龙渊">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="post-title-link" itemprop="url">第十一章 数组”</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-02 14:59:28 / 修改时间：16:42:54" itemprop="dateCreated datePublished" datetime="2022-04-02T14:59:28+08:00">2022-04-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第十一章-数组"><a href="#第十一章-数组" class="headerlink" title="第十一章 数组"></a>第十一章 数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>定义格式 ： 类型名 数组名 [常量表达式] ;</p>
+<p>（1）数组也是一种类型，称为数组类型。<br>（2）<code>数组名由程序员命名，须遵守标识符的命名规则；</code><br>（3）数组名后面[ ]中是一个常量表达式，其中<strong>不允许含有变量</strong>，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为<strong>整型或字符型</strong>。<br>（4）数组元素的下标从0开始计数。<br>（5）每个元素都是数组定义所规定类型的一个<strong>变量</strong>。</p>
+<p><code>下标变量</code></p>
+<h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p>一维数组在内存中占据一段连续的存储空间。</p>
+<p>数组名代表一个数组类型的对象，在以下三种使用场合，他都代表整个数组：<br>（1）测试整个数组的空间大小：<strong>sizeof</strong>（a）。<br>&amp;emsp; <code> sizeof在计算地址a + i 会自动对 i 乘以sizeof（int），然后再与 a 相加。</code><br>（2）获取整个数组的指针：**&amp;a<strong>。<br>（3）</strong>用字符串对字符数组初始化**。<br><strong>其他场合退化为一个指向数组首元素的指针。</strong><code>a + 1 ，此时a表示一个指向变量a[0]的指针常量。</code></p>
+<p>数组名代表一个对象，即整个数组，不是常量。只有被用作指针时，才是一个指向数组首元素的指针常量。</p>
+<p>表达式 a + i 的值（大小）就是a[i]的地址，a的类型决定着表达式的类型。因此，<strong>表达式a + i是一个指针，指向a[i]</strong>,所以*<em>可以用</em>（a + i ）表示 a[i]**。 </p>
+<h3 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a>表示方法</h3><p>下标法： a[0] &amp;ensp; <code> 编译器仍当作指针法处理</code><br>指针法：* a</p>
+<p>为赋初值的元素自动置为0。</p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>类型名 数组名[常量表达式1][常量表达式2]；</p>
+<p>二维数组的元素是一维元素，他的元素的元素是下标变量。</p>
+<p>二维数组在内存中占据一段连续的存储空间。</p>
+<p>存储较一维数组多出混合法 *（a[1]+2）</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>（1）给所有下标变量赋初值 <code>int a[2][3] = &#123;1,2,3,4,5,6&#125; </code> 所有数据写在一对大括号内<br>（2）每行数据再加一个大括号（多维） <code>int a[2][3] = &#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;</code><br>（3）可以省略第一个[]中的值 <code>int a[][3] = &#123;&#123;1,2&#125;,&#123;3&#125;,&#123;4&#125;&#125; //相当于int a[3][3]</code><br>（4）只对部分下标变量赋值。 <code>int a[][3] =&#123;&#123;1,2&#125;,&#123;1&#125;&#125; //下标变量的值依次是1、2、0、1、0、0</code></p>
+<h2 id="字符数组和字符串处理函数"><a href="#字符数组和字符串处理函数" class="headerlink" title="字符数组和字符串处理函数"></a>字符数组和字符串处理函数</h2><h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><h4 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h4><p>（1）单字符形式<code>与其他类型数组的初始化相同</code><br>（2）字符串形式<br>&amp;emsp;char a[10] &#x3D; “string”;<code>占用前面7个内存空间，包括一个空字符&#39;\0&#39;，剩下自动置零</code><br>&amp;emsp;char b[] &#x3D; “string”;<code>只分配七个字节空间（按需分配）</code><br>&amp;emsp;char c[3][8] &#x3D; {“abc”,”123”,”string”}；<code>共分配24个空间，每个一维数组八个字节</code></p>
+<p>strcat连接函数<br>strcpy复制函数<br>strcmp比较函数</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="君不二">
+      <meta itemprop="description" content="高山仰止 景行行之">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潜龙渊">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/" class="post-title-link" itemprop="url">第十章、十二章、十三章 指针</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-02 14:11:40 / 修改时间：19:45:03" itemprop="dateCreated datePublished" datetime="2022-04-02T14:11:40+08:00">2022-04-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第十章-用指针变量访问变量"><a href="#第十章-用指针变量访问变量" class="headerlink" title="第十章 用指针变量访问变量"></a>第十章 用指针变量访问变量</h1><h2 id="指针和指针变量"><a href="#指针和指针变量" class="headerlink" title="指针和指针变量"></a>指针和指针变量</h2><p>能导引操作系统引用对象的信息称为<strong>指针</strong>。<br><code>地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式</code></p>
+<p>存地址的变量就是<strong>指针变量</strong>,只有指针变量能够存地址。</p>
+<p><code>若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。</code></p>
+<p>指针变量具有指针的两个属性（地址、类型），<strong>指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针</strong>。</p>
+<p><code>不可变的指针 —— 指针常量</code></p>
+<p>&amp; 严格上讲作取指针运算符。</p>
+<p>任何变量都有值和地址两个属性，程序运行过程中，一旦给变量分配了空间，则这两个属性便确定了。</p>
+<p>直接寻址：在变量地址已知的情况下直接到内存中找变量的寻址方式。<code>在变量的作用域内，通过变量的名字去访问变量。</code></p>
+<p>间接寻址：若变量 a 的地址已然存放再另一个变量 p 之中，则可以先到内存中找到 p ，从 p 中取出 a 的地址，然后再按照取出的这个地址到内存中找到 a，<code>eg: a = 5;b = a;就可以写成 *p = 5; b = *p;</code>p 对应着 a ，这种关系称为“指向”，即 p 指向 a；<br><code>对于数组，若int a[4], *p = &amp;a[0],则可以用*（p + 1）表示a[1] </code>  <strong>p&#x3D;&amp;a[0]与p&#x3D;a等价</strong><br><code>同理二维数组 p = a[0];(不能写成p=a)，可以写成p=&amp;a[0][0]</code><br>*p的含义就是p对应的那个变量。</p>
+<p><strong>直接写出变量的名字 —— 直接寻址；<br>通过别的变量名来表示她 —— 间接寻址。</strong></p>
+<p>存地址的变量成为指针变量；指针变量是变量，是用来存地址的，他的值是一个地址。指针变量定义之后必须先赋值，然后才能使用。</p>
+<p>&amp;a是指针，包含地址和类型，但是赋值时只取它的值（大小），即地址，因为指针变量自己有类型。</p>
+<p><strong>指针变量是存地址的，不能把整数赋值给指针变量，除非先经过强制类型转换。<br><code>p = (int *)(2345)</code></strong></p>
+<p><strong>如果只是定义了指针变量但没有对他赋值，那么指针变量的值将是一个不确定的地址，这意味着指针变量指向内存中不确定的某处（俗称野指针），避免这种情况可以先赋初值NULL，表示他不指向任何实际对象。</strong></p>
+<h1 id="第十二章-用指针变量访问下标变量"><a href="#第十二章-用指针变量访问下标变量" class="headerlink" title="第十二章 用指针变量访问下标变量"></a>第十二章 用指针变量访问下标变量</h1><h1 id="第十三章-指针综述"><a href="#第十三章-指针综述" class="headerlink" title="第十三章 指针综述"></a>第十三章 指针综述</h1><p>在变量的生存期内，指向变量的指针常量的值是固定的、不可变的。</p>
+<p>指向变量的指针变量，其所指的对象是可以换的。</p>
+<p>函数的入口地址是每次执行函数的“进入点”。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E3%80%81%E4%B9%9D%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -553,7 +720,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-01 20:54:05" itemprop="dateModified" datetime="2022-04-01T20:54:05+08:00">2022-04-01</time>
+                <time title="修改时间：2022-04-02 09:01:47" itemprop="dateModified" datetime="2022-04-02T09:01:47+08:00">2022-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -628,7 +795,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="post-title-link" itemprop="url">第三章编程基础知识</a>
+            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="post-title-link" itemprop="url">第三章 编程基础知识</a>
         </h2>
 
         <div class="post-meta">
@@ -645,7 +812,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-01 20:55:24" itemprop="dateModified" datetime="2022-04-01T20:55:24+08:00">2022-04-01</time>
+                <time title="修改时间：2022-04-02 15:03:58" itemprop="dateModified" datetime="2022-04-02T15:03:58+08:00">2022-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -955,162 +1122,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="君不二">
-      <meta itemprop="description" content="高山仰止 景行行之">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潜龙渊">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">机器学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-17 19:09:07" itemprop="dateCreated datePublished" datetime="2022-03-17T19:09:07+08:00">2022-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-28 17:44:37" itemprop="dateModified" datetime="2022-03-28T17:44:37+08:00">2022-03-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="机器学习第一章"><a href="#机器学习第一章" class="headerlink" title="机器学习第一章"></a>机器学习第一章</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p>机器学习通过积累经验，利用经验，最后达到决策新情况的目的。</p>
-<p>记录：关于一个事件或对象的描述，称为“实例”或者“样本”。记录的集合称为“数据集”。</p>
-<p>属性：反应事件或对象在某方面的表现或性质的事项，也称为 <strong>“特征”</strong>；属性上的取值称为 <strong>“属性值”</strong>。属性张成的空间称为 <strong>“属性空间”</strong>、<strong>“样本空间”</strong> 或 <strong>“输入空间”</strong>。由于空间中的每个点对应一个坐标向量，因此也可以把一个示例称为一个 <strong>“特征向量”</strong>；而属性的个数称为 <strong>“维数”</strong>。</p>
-<p>从数据中学的模型的过程称为 <strong>“学习”</strong> 或 <strong>“训练”</strong>，这个过程通过执行某个学习算法来完成。训练过程中使用的数据称为 <strong>“训练数据”</strong>，其中每个样本称为一个 <strong>“训练样本”</strong>，训练样本组成的集合称为 <strong>“训练集”</strong>。</p>
-<p>学得模型对应了关于数据的某种潜在的规律，因此亦为 <strong>“假设”</strong>；这种潜在规律自身，则称为 <strong>“真相”</strong> 或 <strong>“真实”</strong>。此外 <em>“模型 &#x3D;&#x3D; 学习器”。</em></p>
-<p>示例结果的信息称为 <strong>“标记”</strong>，拥有了标记信息的示例称为 <strong>“样例”</strong>。所有标记的集合称为 <strong>“标记空间”</strong> 或 <strong>“输出空间”</strong>.</p>
-<p>若机器学习预测的是 <strong>离散值</strong>，<code>例如“好瓜”、“坏瓜”</code>，此类学习任务称为 <strong>“分类”</strong>；<br>    若预测的是 <strong>连续值</strong>， <code>例如西瓜成熟度0.95、0.37</code>，则称为 <strong>“回归”</strong>；<br>    对只涉及两个类别的 <strong>“二分类”</strong>，其中一个称为 <strong>“正类”</strong>，另一个称为 <strong>“反类”</strong>；<br>    多个类别称为 <strong>“多分类”</strong>。</p>
-<p>预测的过程称为 <strong>“测试”</strong>，被预测的样本称为 <strong>“测试样本”</strong>。</p>
-<p>将训练中的 <em>西瓜</em>分成若干组称为 <strong>“聚类”</strong>，每组称为一个 <strong>“簇”</strong>。</p>
-<p>根据训练数据是否拥有标记信息，学习任务可以大致划分为两个大类 <strong>“监督学习”</strong>、 <strong>“无监督学习”</strong>，分类和回归是前者的代表，而聚类是后者的代表。</p>
-<p>学得模型视同于新样本的能力称为 <strong>“泛化（generalization）能力”</strong>。通常假设样本空间中全体样本服从一个未知 <strong>“分布”</strong>，我们获得的每个样本都是独立地从这个分布上采样获得的，即 <strong>“独立同分布”</strong>简称 <strong>“i.d.d.”</strong>。</p>
-<p><strong>归纳</strong>和 <strong>演绎</strong>是科学推理的两大基本手段，前者是从特殊到一般的”泛化”过程，即从具体的事实归纳出一般性规律；后者则是从一般到特殊的 <strong>“特化”</strong>过程，即从基础原理推演出具体状况。</p>
-<p><code>假设学习 -归纳学习概念学习待补充</code></p>
-<p><strong>机械学习</strong>，<em>“记住”</em> 训练样本或称为 **”死记硬背式学习”**。</p>
-<p>可能有多个假设与训练集一致，即存在一个与训练集一致的“假设集合”，则称其为 <strong>“版本空间”</strong>。</p>
-<p>机器学习算法在学习过程中对某种类型假设的偏好，称为 <strong>“归纳偏好”</strong>，或简称为 <strong>“偏好”</strong>。任何一个有效的机器学习算法必有其归纳偏好。<code>否则将会被假设空间中看似在训练集上“等效”的假设所迷惑，而无法产生确定的学习结果</code></p>
-<p><strong>奥卡姆剃刀原则</strong>，若有多个假设与观察一致，则选择最简单的那个。</p>
-<p><strong>“没有免费的午餐”定理</strong>，简称NFL，无论学习算法是否聪明、笨拙，期望值达到相同。NFL定理的一个重要的前提：所有”问题”出现的机会相同、或所有的问题同等重要。</p>
-<p><code>机器学习的发展历程待补充</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="君不二">
-      <meta itemprop="description" content="高山仰止 景行行之">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潜龙渊">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/10/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-03-10 19:58:53 / 修改时间：19:40:39" itemprop="dateCreated datePublished" datetime="2022-03-10T19:58:53+08:00">2022-03-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1175,14 +1191,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

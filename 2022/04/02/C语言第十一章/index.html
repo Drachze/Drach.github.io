@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第四章 顺序结构顺序结构的程序总是按照由上而下的顺序执行赋值和输入输出 赋值语句赋值表达式后面加一个分号，就是赋值语句。变量 &#x3D; 表达式 ； 常量和变量是最简单的表达式 赋值的几种数据处理方式1.变量和表达式结果的存储方式相同： 1）若变量和表达式结果长度相同，则原样复制。 2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 &#x3D;&gt; 00000001">
+  <meta name="description" content="第十一章 数组一维数组定义定义格式 ： 类型名 数组名 [常量表达式] ; （1）数组也是一种类型，称为数组类型。（2）数组名由程序员命名，须遵守标识符的命名规则；（3）数组名后面[ ]中是一个常量表达式，其中不允许含有变量，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为整型或字符型。（4）数组元素的下标从0开始计数。（5）每个元素都是数组定义所规定类型的一个变量。 下标变量 存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第四章顺序结构">
-<meta property="og:url" content="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:title" content="第十一章 数组”">
+<meta property="og:url" content="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第四章 顺序结构顺序结构的程序总是按照由上而下的顺序执行赋值和输入输出 赋值语句赋值表达式后面加一个分号，就是赋值语句。变量 &#x3D; 表达式 ； 常量和变量是最简单的表达式 赋值的几种数据处理方式1.变量和表达式结果的存储方式相同： 1）若变量和表达式结果长度相同，则原样复制。 2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 &#x3D;&gt; 00000001">
+<meta property="og:description" content="第十一章 数组一维数组定义定义格式 ： 类型名 数组名 [常量表达式] ; （1）数组也是一种类型，称为数组类型。（2）数组名由程序员命名，须遵守标识符的命名规则；（3）数组名后面[ ]中是一个常量表达式，其中不允许含有变量，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为整型或字符型。（4）数组元素的下标从0开始计数。（5）每个元素都是数组定义所规定类型的一个变量。 下标变量 存">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-31T05:25:30.000Z">
-<meta property="article:modified_time" content="2022-04-02T01:01:47.886Z">
+<meta property="article:published_time" content="2022-04-02T06:59:28.000Z">
+<meta property="article:modified_time" content="2022-04-02T08:42:54.653Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+<link rel="canonical" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>第四章顺序结构 | 潜龙渊</title>
+  <title>第十一章 数组” | 潜龙渊</title>
   
 
 
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第四章顺序结构
+          第十一章 数组”
         </h1>
 
         <div class="post-meta">
@@ -182,16 +182,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-03-31 13:25:30" itemprop="dateCreated datePublished" datetime="2022-03-31T13:25:30+08:00">2022-03-31</time>
+              <time title="创建时间：2022-04-02 14:59:28 / 修改时间：16:42:54" itemprop="dateCreated datePublished" datetime="2022-04-02T14:59:28+08:00">2022-04-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-02 09:01:47" itemprop="dateModified" datetime="2022-04-02T09:01:47+08:00">2022-04-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -213,25 +207,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第四章-顺序结构"><a href="#第四章-顺序结构" class="headerlink" title="第四章 顺序结构"></a>第四章 顺序结构</h1><p><strong>顺序结构的程序总是按照由上而下的顺序执行</strong><br><code>赋值和输入输出</code></p>
-<h2 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h2><p>赋值表达式后面加一个分号，就是赋值语句。<br>变量 &#x3D; 表达式 ； <code>常量和变量是最简单的表达式</code></p>
-<h3 id="赋值的几种数据处理方式"><a href="#赋值的几种数据处理方式" class="headerlink" title="赋值的几种数据处理方式"></a>赋值的几种数据处理方式</h3><p>1.变量和表达式结果的存储方式相同：</p>
-<pre><code>1）若变量和表达式结果长度相同，则原样复制。
-2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 =&gt; 00000001
-3）若变量比表达式结果“长”，则进行符号位扩展。
-11111111 11111111 =&gt; 11111111 11111111 11111111 11111111
-</code></pre>
-<p><code>当进行符号位扩展时，如果出现字符数据赋值给整型变量时，存在两种情况：如果字符的ASCII的码值不超过127，则还是用符号位扩展；若超过了127，用0还是用1，取决于机器</code></p>
-<p>2.变量和表达式结果的存储方式不同:转换存储方式再进行存储。</p>
-<h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>内存中的一段存储区域，用来临时存放一些数据。</p>
-<p>getchar（）:从键盘缓冲区读取一个字符（只取第一个字符）返回，返回值是所读字符的ASCII码值。</p>
-<p>若键盘缓冲区有字符，则取第一个字符返回；若键盘缓冲区没有字符，等待用户输入，直到用户输入数据为止。</p>
-<p><code>一个程序刚运行时，缓冲区总是空的。</code></p>
-<p><em>putchar（）</em></p>
-<p>:*<code>P66</code><br>scanf() 格式注意一一对应</p>
-<p><strong>用scanf（）输入数据时不能规定精度。</strong></p>
-<p>1.两个数值型数据，通常要用分隔符分开。<br>2.若不加分隔符系统也能把数据分开，则不必加。<br>    （1)若格式控制字符串中规定了数据宽度，输入时可以不要分隔符。<code>%2d</code><br>    （2)读取数据时，若遇到了非法字符则认为数据结束。<br>    （3）字符型数据前后都不需要分隔符。<br>    <code>一是因为分隔符也是字符，二是因为字符都是单个的，不需要分隔。</code><br>3.若格式控制字符串中除了%开头的组合外还有其它字符，则输入时必须原样输入。<br>4.若格式控制字符串中含有空白符，则输入数据中对应的空白符将被读取并被丢弃，即使这些空白字符是连续的几个。</p>
-<p>**% *d**把读到的数据消耗掉</p>
+        <h1 id="第十一章-数组"><a href="#第十一章-数组" class="headerlink" title="第十一章 数组"></a>第十一章 数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>定义格式 ： 类型名 数组名 [常量表达式] ;</p>
+<p>（1）数组也是一种类型，称为数组类型。<br>（2）<code>数组名由程序员命名，须遵守标识符的命名规则；</code><br>（3）数组名后面[ ]中是一个常量表达式，其中<strong>不允许含有变量</strong>，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为<strong>整型或字符型</strong>。<br>（4）数组元素的下标从0开始计数。<br>（5）每个元素都是数组定义所规定类型的一个<strong>变量</strong>。</p>
+<p><code>下标变量</code></p>
+<h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p>一维数组在内存中占据一段连续的存储空间。</p>
+<p>数组名代表一个数组类型的对象，在以下三种使用场合，他都代表整个数组：<br>（1）测试整个数组的空间大小：<strong>sizeof</strong>（a）。<br>&amp;emsp; <code> sizeof在计算地址a + i 会自动对 i 乘以sizeof（int），然后再与 a 相加。</code><br>（2）获取整个数组的指针：**&amp;a<strong>。<br>（3）</strong>用字符串对字符数组初始化**。<br><strong>其他场合退化为一个指向数组首元素的指针。</strong><code>a + 1 ，此时a表示一个指向变量a[0]的指针常量。</code></p>
+<p>数组名代表一个对象，即整个数组，不是常量。只有被用作指针时，才是一个指向数组首元素的指针常量。</p>
+<p>表达式 a + i 的值（大小）就是a[i]的地址，a的类型决定着表达式的类型。因此，<strong>表达式a + i是一个指针，指向a[i]</strong>,所以*<em>可以用</em>（a + i ）表示 a[i]**。 </p>
+<h3 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a>表示方法</h3><p>下标法： a[0] &amp;ensp; <code> 编译器仍当作指针法处理</code><br>指针法：* a</p>
+<p>为赋初值的元素自动置为0。</p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>类型名 数组名[常量表达式1][常量表达式2]；</p>
+<p>二维数组的元素是一维元素，他的元素的元素是下标变量。</p>
+<p>二维数组在内存中占据一段连续的存储空间。</p>
+<p>存储较一维数组多出混合法 *（a[1]+2）</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>（1）给所有下标变量赋初值 <code>int a[2][3] = &#123;1,2,3,4,5,6&#125; </code> 所有数据写在一对大括号内<br>（2）每行数据再加一个大括号（多维） <code>int a[2][3] = &#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;</code><br>（3）可以省略第一个[]中的值 <code>int a[][3] = &#123;&#123;1,2&#125;,&#123;3&#125;,&#123;4&#125;&#125; //相当于int a[3][3]</code><br>（4）只对部分下标变量赋值。 <code>int a[][3] =&#123;&#123;1,2&#125;,&#123;1&#125;&#125; //下标变量的值依次是1、2、0、1、0、0</code></p>
+<h2 id="字符数组和字符串处理函数"><a href="#字符数组和字符串处理函数" class="headerlink" title="字符数组和字符串处理函数"></a>字符数组和字符串处理函数</h2><h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><h4 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h4><p>（1）单字符形式<code>与其他类型数组的初始化相同</code><br>（2）字符串形式<br>&amp;emsp;char a[10] &#x3D; “string”;<code>占用前面7个内存空间，包括一个空字符&#39;\0&#39;，剩下自动置零</code><br>&amp;emsp;char b[] &#x3D; “string”;<code>只分配七个字节空间（按需分配）</code><br>&amp;emsp;char c[3][8] &#x3D; {“abc”,”123”,”string”}；<code>共分配24个空间，每个一维数组八个字节</code></p>
+<p>strcat连接函数<br>strcpy复制函数<br>strcmp比较函数</p>
 
     </div>
 
@@ -247,13 +238,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="prev" title="第三章 编程基础知识">
-      <i class="fa fa-chevron-left"></i> 第三章 编程基础知识
+    <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/" rel="prev" title="第十章、十二章、十三章 指针">
+      <i class="fa fa-chevron-left"></i> 第十章、十二章、十三章 指针
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E7%AB%A0/" rel="next" title="第五章选择结构">
-      第五章选择结构 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -312,7 +300,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">第四章 顺序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.1.</span> <span class="nav-text">赋值语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">赋值的几种数据处理方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">缓冲区</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">第十一章 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">表示方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">字符数组和字符串处理函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">字符数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-1"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">初始化</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第四章 顺序结构顺序结构的程序总是按照由上而下的顺序执行赋值和输入输出 赋值语句赋值表达式后面加一个分号，就是赋值语句。变量 &#x3D; 表达式 ； 常量和变量是最简单的表达式 赋值的几种数据处理方式1.变量和表达式结果的存储方式相同： 1）若变量和表达式结果长度相同，则原样复制。 2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 &#x3D;&gt; 00000001">
+  <meta name="description" content="第十章 用指针变量访问变量指针和指针变量能导引操作系统引用对象的信息称为指针。地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式 存地址的变量就是指针变量,只有指针变量能够存地址。 若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。 指针变量具有指针的两个属性（地址、类型），指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针。 不可变的指">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第四章顺序结构">
-<meta property="og:url" content="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:title" content="第十章、十二章、十三章 指针">
+<meta property="og:url" content="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第四章 顺序结构顺序结构的程序总是按照由上而下的顺序执行赋值和输入输出 赋值语句赋值表达式后面加一个分号，就是赋值语句。变量 &#x3D; 表达式 ； 常量和变量是最简单的表达式 赋值的几种数据处理方式1.变量和表达式结果的存储方式相同： 1）若变量和表达式结果长度相同，则原样复制。 2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 &#x3D;&gt; 00000001">
+<meta property="og:description" content="第十章 用指针变量访问变量指针和指针变量能导引操作系统引用对象的信息称为指针。地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式 存地址的变量就是指针变量,只有指针变量能够存地址。 若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。 指针变量具有指针的两个属性（地址、类型），指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针。 不可变的指">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-31T05:25:30.000Z">
-<meta property="article:modified_time" content="2022-04-02T01:01:47.886Z">
+<meta property="article:published_time" content="2022-04-02T06:11:40.000Z">
+<meta property="article:modified_time" content="2022-04-02T11:45:03.111Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+<link rel="canonical" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>第四章顺序结构 | 潜龙渊</title>
+  <title>第十章、十二章、十三章 指针 | 潜龙渊</title>
   
 
 
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第四章顺序结构
+          第十章、十二章、十三章 指针
         </h1>
 
         <div class="post-meta">
@@ -182,16 +182,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-03-31 13:25:30" itemprop="dateCreated datePublished" datetime="2022-03-31T13:25:30+08:00">2022-03-31</time>
+              <time title="创建时间：2022-04-02 14:11:40 / 修改时间：19:45:03" itemprop="dateCreated datePublished" datetime="2022-04-02T14:11:40+08:00">2022-04-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-02 09:01:47" itemprop="dateModified" datetime="2022-04-02T09:01:47+08:00">2022-04-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -213,25 +207,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第四章-顺序结构"><a href="#第四章-顺序结构" class="headerlink" title="第四章 顺序结构"></a>第四章 顺序结构</h1><p><strong>顺序结构的程序总是按照由上而下的顺序执行</strong><br><code>赋值和输入输出</code></p>
-<h2 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h2><p>赋值表达式后面加一个分号，就是赋值语句。<br>变量 &#x3D; 表达式 ； <code>常量和变量是最简单的表达式</code></p>
-<h3 id="赋值的几种数据处理方式"><a href="#赋值的几种数据处理方式" class="headerlink" title="赋值的几种数据处理方式"></a>赋值的几种数据处理方式</h3><p>1.变量和表达式结果的存储方式相同：</p>
-<pre><code>1）若变量和表达式结果长度相同，则原样复制。
-2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 =&gt; 00000001
-3）若变量比表达式结果“长”，则进行符号位扩展。
-11111111 11111111 =&gt; 11111111 11111111 11111111 11111111
-</code></pre>
-<p><code>当进行符号位扩展时，如果出现字符数据赋值给整型变量时，存在两种情况：如果字符的ASCII的码值不超过127，则还是用符号位扩展；若超过了127，用0还是用1，取决于机器</code></p>
-<p>2.变量和表达式结果的存储方式不同:转换存储方式再进行存储。</p>
-<h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>内存中的一段存储区域，用来临时存放一些数据。</p>
-<p>getchar（）:从键盘缓冲区读取一个字符（只取第一个字符）返回，返回值是所读字符的ASCII码值。</p>
-<p>若键盘缓冲区有字符，则取第一个字符返回；若键盘缓冲区没有字符，等待用户输入，直到用户输入数据为止。</p>
-<p><code>一个程序刚运行时，缓冲区总是空的。</code></p>
-<p><em>putchar（）</em></p>
-<p>:*<code>P66</code><br>scanf() 格式注意一一对应</p>
-<p><strong>用scanf（）输入数据时不能规定精度。</strong></p>
-<p>1.两个数值型数据，通常要用分隔符分开。<br>2.若不加分隔符系统也能把数据分开，则不必加。<br>    （1)若格式控制字符串中规定了数据宽度，输入时可以不要分隔符。<code>%2d</code><br>    （2)读取数据时，若遇到了非法字符则认为数据结束。<br>    （3）字符型数据前后都不需要分隔符。<br>    <code>一是因为分隔符也是字符，二是因为字符都是单个的，不需要分隔。</code><br>3.若格式控制字符串中除了%开头的组合外还有其它字符，则输入时必须原样输入。<br>4.若格式控制字符串中含有空白符，则输入数据中对应的空白符将被读取并被丢弃，即使这些空白字符是连续的几个。</p>
-<p>**% *d**把读到的数据消耗掉</p>
+        <h1 id="第十章-用指针变量访问变量"><a href="#第十章-用指针变量访问变量" class="headerlink" title="第十章 用指针变量访问变量"></a>第十章 用指针变量访问变量</h1><h2 id="指针和指针变量"><a href="#指针和指针变量" class="headerlink" title="指针和指针变量"></a>指针和指针变量</h2><p>能导引操作系统引用对象的信息称为<strong>指针</strong>。<br><code>地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式</code></p>
+<p>存地址的变量就是<strong>指针变量</strong>,只有指针变量能够存地址。</p>
+<p><code>若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。</code></p>
+<p>指针变量具有指针的两个属性（地址、类型），<strong>指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针</strong>。</p>
+<p><code>不可变的指针 —— 指针常量</code></p>
+<p>&amp; 严格上讲作取指针运算符。</p>
+<p>任何变量都有值和地址两个属性，程序运行过程中，一旦给变量分配了空间，则这两个属性便确定了。</p>
+<p>直接寻址：在变量地址已知的情况下直接到内存中找变量的寻址方式。<code>在变量的作用域内，通过变量的名字去访问变量。</code></p>
+<p>间接寻址：若变量 a 的地址已然存放再另一个变量 p 之中，则可以先到内存中找到 p ，从 p 中取出 a 的地址，然后再按照取出的这个地址到内存中找到 a，<code>eg: a = 5;b = a;就可以写成 *p = 5; b = *p;</code>p 对应着 a ，这种关系称为“指向”，即 p 指向 a；<br><code>对于数组，若int a[4], *p = &amp;a[0],则可以用*（p + 1）表示a[1] </code>  <strong>p&#x3D;&amp;a[0]与p&#x3D;a等价</strong><br><code>同理二维数组 p = a[0];(不能写成p=a)，可以写成p=&amp;a[0][0]</code><br>*p的含义就是p对应的那个变量。</p>
+<p><strong>直接写出变量的名字 —— 直接寻址；<br>通过别的变量名来表示她 —— 间接寻址。</strong></p>
+<p>存地址的变量成为指针变量；指针变量是变量，是用来存地址的，他的值是一个地址。指针变量定义之后必须先赋值，然后才能使用。</p>
+<p>&amp;a是指针，包含地址和类型，但是赋值时只取它的值（大小），即地址，因为指针变量自己有类型。</p>
+<p><strong>指针变量是存地址的，不能把整数赋值给指针变量，除非先经过强制类型转换。<br><code>p = (int *)(2345)</code></strong></p>
+<p><strong>如果只是定义了指针变量但没有对他赋值，那么指针变量的值将是一个不确定的地址，这意味着指针变量指向内存中不确定的某处（俗称野指针），避免这种情况可以先赋初值NULL，表示他不指向任何实际对象。</strong></p>
+<h1 id="第十二章-用指针变量访问下标变量"><a href="#第十二章-用指针变量访问下标变量" class="headerlink" title="第十二章 用指针变量访问下标变量"></a>第十二章 用指针变量访问下标变量</h1><h1 id="第十三章-指针综述"><a href="#第十三章-指针综述" class="headerlink" title="第十三章 指针综述"></a>第十三章 指针综述</h1><p>在变量的生存期内，指向变量的指针常量的值是固定的、不可变的。</p>
+<p>指向变量的指针变量，其所指的对象是可以换的。</p>
+<p>函数的入口地址是每次执行函数的“进入点”。</p>
 
     </div>
 
@@ -247,12 +239,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="prev" title="第三章 编程基础知识">
-      <i class="fa fa-chevron-left"></i> 第三章 编程基础知识
+    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E3%80%81%E4%B9%9D%E7%AB%A0/" rel="prev" title="第八章变量、第九章预编译">
+      <i class="fa fa-chevron-left"></i> 第八章变量、第九章预编译
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E7%AB%A0/" rel="next" title="第五章选择结构">
-      第五章选择结构 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" rel="next" title="第十一章 数组”">
+      第十一章 数组” <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -312,7 +304,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">第四章 顺序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.1.</span> <span class="nav-text">赋值语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">赋值的几种数据处理方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">缓冲区</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E7%94%A8%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E8%AE%BF%E9%97%AE%E5%8F%98%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">第十章 用指针变量访问变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">指针和指针变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%94%A8%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E8%AE%BF%E9%97%AE%E4%B8%8B%E6%A0%87%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">第十二章 用指针变量访问下标变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E6%8C%87%E9%92%88%E7%BB%BC%E8%BF%B0"><span class="nav-number">3.</span> <span class="nav-text">第十三章 指针综述</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
