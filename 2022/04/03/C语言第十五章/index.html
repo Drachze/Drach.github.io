@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第十一章 数组一维数组定义定义格式 ： 类型名 数组名 [常量表达式] ; （1）数组也是一种类型，称为数组类型。（2）数组名由程序员命名，须遵守标识符的命名规则；（3）数组名后面[ ]中是一个常量表达式，其中不允许含有变量，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为整型或字符型。（4）数组元素的下标从0开始计数。（5）每个元素都是数组定义所规定类型的一个变量。 下标变量 存">
+  <meta name="description" content="位运算位运算符及其运算1.” &amp;” ：按位与，位置相同的位两两相“与”运算，若两位都是1，则结果中该位为 1 ，否则为 0 。 特点：  只要两位中一个是 0 ，结果中该位必然为 0。输出一个整数的最低位: n &amp; 0x0001; 2.” |” ：按位或，位置相同的位两两相“或”运算，若两位中有一个1，则结果中该位为 1 ，否则为 0 。 3.” ^ “ : 异或,每一对在两个数中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第十一章 数组”">
-<meta property="og:url" content="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/index.html">
+<meta property="og:title" content="第十五章 位运算">
+<meta property="og:url" content="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第十一章 数组一维数组定义定义格式 ： 类型名 数组名 [常量表达式] ; （1）数组也是一种类型，称为数组类型。（2）数组名由程序员命名，须遵守标识符的命名规则；（3）数组名后面[ ]中是一个常量表达式，其中不允许含有变量，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为整型或字符型。（4）数组元素的下标从0开始计数。（5）每个元素都是数组定义所规定类型的一个变量。 下标变量 存">
+<meta property="og:description" content="位运算位运算符及其运算1.” &amp;” ：按位与，位置相同的位两两相“与”运算，若两位都是1，则结果中该位为 1 ，否则为 0 。 特点：  只要两位中一个是 0 ，结果中该位必然为 0。输出一个整数的最低位: n &amp; 0x0001; 2.” |” ：按位或，位置相同的位两两相“或”运算，若两位中有一个1，则结果中该位为 1 ，否则为 0 。 3.” ^ “ : 异或,每一对在两个数中">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-02T06:59:28.000Z">
-<meta property="article:modified_time" content="2022-04-02T08:42:54.653Z">
+<meta property="article:published_time" content="2022-04-03T07:23:01.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:00:39.861Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
+<link rel="canonical" href="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>第十一章 数组” | 潜龙渊</title>
+  <title>第十五章 位运算 | 潜龙渊</title>
   
 
 
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第十一章 数组”
+          第十五章 位运算
         </h1>
 
         <div class="post-meta">
@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-04-02 14:59:28 / 修改时间：16:42:54" itemprop="dateCreated datePublished" datetime="2022-04-02T14:59:28+08:00">2022-04-02</time>
+              <time title="创建时间：2022-04-03 15:23:01 / 修改时间：16:00:39" itemprop="dateCreated datePublished" datetime="2022-04-03T15:23:01+08:00">2022-04-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,22 +207,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第十一章-数组"><a href="#第十一章-数组" class="headerlink" title="第十一章 数组"></a>第十一章 数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>定义格式 ： 类型名 数组名 [常量表达式] ;</p>
-<p>（1）数组也是一种类型，称为数组类型。<br>（2）<code>数组名由程序员命名，须遵守标识符的命名规则；</code><br>（3）数组名后面[ ]中是一个常量表达式，其中<strong>不允许含有变量</strong>，但可以使用符号常量。常量表达式的值代表数字组含有的个数，类型应为<strong>整型或字符型</strong>。<br>（4）数组元素的下标从0开始计数。<br>（5）每个元素都是数组定义所规定类型的一个<strong>变量</strong>。</p>
-<p><code>下标变量</code></p>
-<h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p>一维数组在内存中占据一段连续的存储空间。</p>
-<p>数组名代表一个数组类型的对象，在以下三种使用场合，他都代表整个数组：<br>（1）测试整个数组的空间大小：<strong>sizeof</strong>（a）。<br>&amp;emsp; <code> sizeof在计算地址a + i 会自动对 i 乘以sizeof（int），然后再与 a 相加。</code><br>（2）获取整个数组的指针：**&amp;a<strong>。<br>（3）</strong>用字符串对字符数组初始化**。<br><strong>其他场合退化为一个指向数组首元素的指针。</strong><code>a + 1 ，此时a表示一个指向变量a[0]的指针常量。</code></p>
-<p>数组名代表一个对象，即整个数组，不是常量。只有被用作指针时，才是一个指向数组首元素的指针常量。</p>
-<p>表达式 a + i 的值（大小）就是a[i]的地址，a的类型决定着表达式的类型。因此，<strong>表达式a + i是一个指针，指向a[i]</strong>,所以*<em>可以用</em>（a + i ）表示 a[i]**。 </p>
-<h3 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a>表示方法</h3><p>下标法： a[0] &amp;ensp; <code> 编译器仍当作指针法处理</code><br>指针法：* a</p>
-<p>为赋初值的元素自动置为0。</p>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>类型名 数组名[常量表达式1][常量表达式2]；</p>
-<p>二维数组的元素是一维元素，他的元素的元素是下标变量。</p>
-<p>二维数组在内存中占据一段连续的存储空间。</p>
-<p>存储较一维数组多出混合法 *（a[1]+2）</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>（1）给所有下标变量赋初值 <code>int a[2][3] = &#123;1,2,3,4,5,6&#125; </code> 所有数据写在一对大括号内<br>（2）每行数据再加一个大括号（多维） <code>int a[2][3] = &#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;</code><br>（3）可以省略第一个[]中的值 <code>int a[][3] = &#123;&#123;1,2&#125;,&#123;3&#125;,&#123;4&#125;&#125; //相当于int a[3][3]</code><br>（4）只对部分下标变量赋值。 <code>int a[][3] =&#123;&#123;1,2&#125;,&#123;1&#125;&#125; //下标变量的值依次是1、2、0、1、0、0</code></p>
-<h2 id="字符数组和字符串处理函数"><a href="#字符数组和字符串处理函数" class="headerlink" title="字符数组和字符串处理函数"></a>字符数组和字符串处理函数</h2><h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><h4 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h4><p>（1）单字符形式<code>与其他类型数组的初始化相同</code><br>（2）字符串形式<br>&amp;emsp;char a[10] &#x3D; “string”;<code>占用前面7个内存空间，包括一个空字符&#39;\0&#39;，剩下自动置零</code><br>&amp;emsp;char b[] &#x3D; “string”;<code>只分配七个字节空间（按需分配）</code><br>&amp;emsp;char c[3][8] &#x3D; {“abc”,”123”,”string”}；<code>共分配24个空间，每个一维数组八个字节</code></p>
-<p>strcat连接函数<br>strcpy复制函数<br>strcmp比较函数</p>
+        <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="位运算符及其运算"><a href="#位运算符及其运算" class="headerlink" title="位运算符及其运算"></a>位运算符及其运算</h2><p>1.” &amp;” ：按位与，位置相同的位两两相“与”运算，若两位都是1，则结果中该位为 1 ，否则为 0 。</p>
+<p>特点：  只要两位中一个是 0 ，结果中该位必然为 0。<br><code>输出一个整数的最低位: n &amp; 0x0001;</code></p>
+<p>2.” |” ：按位或，位置相同的位两两相“或”运算，若两位中有一个1，则结果中该位为 1 ，否则为 0 。</p>
+<p>3.” ^ “ : 异或,每一对在两个数中位置相同的位都进行“异或”，若两个位的数不同，则结果中该位为 1，否则为 0。<code>相同为0</code></p>
+<p>特点：<br>（1）只要把下面的位写成 1，结果必然与上面的位相反；<br>（2）变量与自身异或，结果为0；<br>（3）变量与0异或，结果不变。</p>
+<p>4.” ~ “ ：取反,所有”位”取反。(0 变 1， 1 变 0)</p>
+<p>5.&lt;&lt; : 左移,数据中的每一位，都向左移动1位或数位。高位的数据丢弃，低位填零。<code>相当于乘以2倍</code></p>
+<p>6.&gt;&gt; : 右移，数据中的每一位，都向右移动1位或数位。右移时，低位的数据丢弃，而高位的处理方法如下：若是正数，高位补0；若是负数，高位补0还是补1取决编译器，大部分补1。<code>相当于原数除以2</code></p>
 
     </div>
 
@@ -238,13 +230,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/" rel="prev" title="第十章、十二章、十三章 指针">
-      <i class="fa fa-chevron-left"></i> 第十章、十二章、十三章 指针
+    <a href="/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/" rel="prev" title="C语言第十四章">
+      <i class="fa fa-chevron-left"></i> C语言第十四章
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/" rel="next" title="C语言第十四章">
-      C语言第十四章 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -303,7 +292,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">第十一章 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">表示方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">字符数组和字符串处理函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">字符数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-1"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">初始化</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-number">1.1.</span> <span class="nav-text">位运算符及其运算</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
