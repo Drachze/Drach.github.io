@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第十章 用指针变量访问变量指针和指针变量能导引操作系统引用对象的信息称为指针。地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式 存地址的变量就是指针变量,只有指针变量能够存地址。 若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。 指针变量具有指针的两个属性（地址、类型），指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针。 不可变的指">
+  <meta name="description" content="第16章 文件文件存储文件中存储数据有两种方式：文本方式、二进制方式。 文本方式：数据是以文本（ASCII码）的形式存储的，即所有的数据都用一个个字符存储到文件中，便于用文本编辑软件打开文件直接查看所存数据。文本方式存储数据也是存的二进制数，只不过每个字节都是ASCII值。所存储的文件称为文本文件，阅读方便，但读写速度慢。 一个文件并非只能用一种格式存放数据 二进制方式：数据完全按照内存中的状态来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第十章、十二章、十三章 指针">
-<meta property="og:url" content="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/index.html">
+<meta property="og:title" content="C语言第十六章">
+<meta property="og:url" content="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/index.html">
 <meta property="og:site_name" content="潜龙渊">
-<meta property="og:description" content="第十章 用指针变量访问变量指针和指针变量能导引操作系统引用对象的信息称为指针。地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式 存地址的变量就是指针变量,只有指针变量能够存地址。 若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。 指针变量具有指针的两个属性（地址、类型），指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针。 不可变的指">
+<meta property="og:description" content="第16章 文件文件存储文件中存储数据有两种方式：文本方式、二进制方式。 文本方式：数据是以文本（ASCII码）的形式存储的，即所有的数据都用一个个字符存储到文件中，便于用文本编辑软件打开文件直接查看所存数据。文本方式存储数据也是存的二进制数，只不过每个字节都是ASCII值。所存储的文件称为文本文件，阅读方便，但读写速度慢。 一个文件并非只能用一种格式存放数据 二进制方式：数据完全按照内存中的状态来">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-02T06:11:40.000Z">
-<meta property="article:modified_time" content="2022-04-02T11:45:03.111Z">
+<meta property="article:published_time" content="2022-04-03T12:44:52.000Z">
+<meta property="article:modified_time" content="2022-04-03T13:41:13.493Z">
 <meta property="article:author" content="君不二">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/">
+<link rel="canonical" href="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>第十章、十二章、十三章 指针 | 潜龙渊</title>
+  <title>C语言第十六章 | 潜龙渊</title>
   
 
 
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%81%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第十章、十二章、十三章 指针
+          C语言第十六章
         </h1>
 
         <div class="post-meta">
@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-04-02 14:11:40 / 修改时间：19:45:03" itemprop="dateCreated datePublished" datetime="2022-04-02T14:11:40+08:00">2022-04-02</time>
+              <time title="创建时间：2022-04-03 20:44:52 / 修改时间：21:41:13" itemprop="dateCreated datePublished" datetime="2022-04-03T20:44:52+08:00">2022-04-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,23 +207,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第十章-用指针变量访问变量"><a href="#第十章-用指针变量访问变量" class="headerlink" title="第十章 用指针变量访问变量"></a>第十章 用指针变量访问变量</h1><h2 id="指针和指针变量"><a href="#指针和指针变量" class="headerlink" title="指针和指针变量"></a>指针和指针变量</h2><p>能导引操作系统引用对象的信息称为<strong>指针</strong>。<br><code>地址用来确定对象在内存中的位置，类型用来确定对象占用的字节数和数据的存储方式</code></p>
-<p>存地址的变量就是<strong>指针变量</strong>,只有指针变量能够存地址。</p>
-<p><code>若由某种老类型派生出一种新的类型，则前者称为基类型，后者称为派生类型。</code></p>
-<p>指针变量具有指针的两个属性（地址、类型），<strong>指针变量是指针，但指针绝不仅限于指针变量，还包括非对象形式的指针</strong>。</p>
-<p><code>不可变的指针 —— 指针常量</code></p>
-<p>&amp; 严格上讲作取指针运算符。</p>
-<p>任何变量都有值和地址两个属性，程序运行过程中，一旦给变量分配了空间，则这两个属性便确定了。</p>
-<p>直接寻址：在变量地址已知的情况下直接到内存中找变量的寻址方式。<code>在变量的作用域内，通过变量的名字去访问变量。</code></p>
-<p>间接寻址：若变量 a 的地址已然存放再另一个变量 p 之中，则可以先到内存中找到 p ，从 p 中取出 a 的地址，然后再按照取出的这个地址到内存中找到 a，<code>eg: a = 5;b = a;就可以写成 *p = 5; b = *p;</code>p 对应着 a ，这种关系称为“指向”，即 p 指向 a；<br><code>对于数组，若int a[4], *p = &amp;a[0],则可以用*（p + 1）表示a[1] </code>  <strong>p&#x3D;&amp;a[0]与p&#x3D;a等价</strong><br><code>同理二维数组 p = a[0];(不能写成p=a)，可以写成p=&amp;a[0][0]</code><br>*p的含义就是p对应的那个变量。</p>
-<p><strong>直接写出变量的名字 —— 直接寻址；<br>通过别的变量名来表示她 —— 间接寻址。</strong></p>
-<p>存地址的变量成为指针变量；指针变量是变量，是用来存地址的，他的值是一个地址。指针变量定义之后必须先赋值，然后才能使用。</p>
-<p>&amp;a是指针，包含地址和类型，但是赋值时只取它的值（大小），即地址，因为指针变量自己有类型。</p>
-<p><strong>指针变量是存地址的，不能把整数赋值给指针变量，除非先经过强制类型转换。<br><code>p = (int *)(2345)</code></strong></p>
-<p><strong>如果只是定义了指针变量但没有对他赋值，那么指针变量的值将是一个不确定的地址，这意味着指针变量指向内存中不确定的某处（俗称野指针），避免这种情况可以先赋初值NULL，表示他不指向任何实际对象。</strong></p>
-<h1 id="第十二章-用指针变量访问下标变量"><a href="#第十二章-用指针变量访问下标变量" class="headerlink" title="第十二章 用指针变量访问下标变量"></a>第十二章 用指针变量访问下标变量</h1><h1 id="第十三章-指针综述"><a href="#第十三章-指针综述" class="headerlink" title="第十三章 指针综述"></a>第十三章 指针综述</h1><p>在变量的生存期内，指向变量的指针常量的值是固定的、不可变的。</p>
-<p>指向变量的指针变量，其所指的对象是可以换的。</p>
-<p>函数的入口地址是每次执行函数的“进入点”。</p>
+        <h1 id="第16章-文件"><a href="#第16章-文件" class="headerlink" title="第16章 文件"></a>第16章 文件</h1><h2 id="文件存储"><a href="#文件存储" class="headerlink" title="文件存储"></a>文件存储</h2><p>文件中存储数据有两种方式：文本方式、二进制方式。</p>
+<p>文本方式：数据是以文本（ASCII码）的形式存储的，即所有的数据都用一个个字符存储到文件中，便于用文本编辑软件打开文件直接查看所存数据。文本方式存储数据也是存的二进制数，只不过每个字节都是ASCII值。所存储的文件称为文本文件，阅读方便，但读写速度慢。</p>
+<p><code>一个文件并非只能用一种格式存放数据</code></p>
+<p>二进制方式：数据完全按照内存中的状态来存储，即把数据在内存中存放的每个字节的二进制数按照顺序直接照搬到文件。二进制文件读写快，但不方便阅读。</p>
+<p>文件操作函数：基本输入输出函数（也被称为系统函数），位于较低层面，直接建立在操作系统所提供的功能之上，通过调用操作系统的功能来操作函数。另一类是常用的高级输入输出函数（又被称为标准输入输出函数），它们是对基本输入输出函数的抽象和封装，位于较高层面，通过基本输入输出函数调用操作系统的功能。</p>
+<p><strong>文件缓冲区在打开文件时分配的</strong>。每个文件在内存中只有一个缓冲区，读取数据时，被用作输入缓冲区，反之输出缓冲区。写文件时，数据先放到缓冲区，等缓冲区满了，在一次性写入文件。</p>
+<p>采用缓冲区进行的读写文件系统，称为缓冲文件系统，也叫高级磁盘输出输出系统。</p>
+<h2 id="读写文件的原理"><a href="#读写文件的原理" class="headerlink" title="读写文件的原理"></a>读写文件的原理</h2><h2 id="文件的读写位置指针和文件结束标志"><a href="#文件的读写位置指针和文件结束标志" class="headerlink" title="文件的读写位置指针和文件结束标志"></a>文件的读写位置指针和文件结束标志</h2><p>读写文件指针：指示目前将要读写的文件是那一个字节的标记。</p>
 
     </div>
 
@@ -239,12 +230,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E3%80%81%E4%B9%9D%E7%AB%A0/" rel="prev" title="第八章变量、第九章预编译">
-      <i class="fa fa-chevron-left"></i> 第八章变量、第九章预编译
+    <a href="/2022/04/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/" rel="prev" title="第十五章 位运算">
+      <i class="fa fa-chevron-left"></i> 第十五章 位运算
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/04/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" rel="next" title="第十一章 数组”">
-      第十一章 数组” <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/04/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%86%B3%E7%AD%96%E6%A0%91/" rel="next" title="第四章 决策树">
+      第四章 决策树 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -304,7 +295,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E7%94%A8%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E8%AE%BF%E9%97%AE%E5%8F%98%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">第十章 用指针变量访问变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">指针和指针变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%94%A8%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E8%AE%BF%E9%97%AE%E4%B8%8B%E6%A0%87%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">第十二章 用指针变量访问下标变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E6%8C%87%E9%92%88%E7%BB%BC%E8%BF%B0"><span class="nav-number">3.</span> <span class="nav-text">第十三章 指针综述</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC16%E7%AB%A0-%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">第16章 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">1.1.</span> <span class="nav-text">文件存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">读写文件的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E4%BD%8D%E7%BD%AE%E6%8C%87%E9%92%88%E5%92%8C%E6%96%87%E4%BB%B6%E7%BB%93%E6%9D%9F%E6%A0%87%E5%BF%97"><span class="nav-number">1.3.</span> <span class="nav-text">文件的读写位置指针和文件结束标志</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
