@@ -157,6 +157,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="君不二">
+      <meta itemprop="description" content="高山仰止 景行行之">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潜龙渊">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E7%AB%A0/" class="post-title-link" itemprop="url">第五章 选择结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-31 13:27:42" itemprop="dateCreated datePublished" datetime="2022-03-31T13:27:42+08:00">2022-03-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-05 14:46:41" itemprop="dateModified" datetime="2022-04-05T14:46:41+08:00">2022-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第五章-选择结构"><a href="#第五章-选择结构" class="headerlink" title="第五章 选择结构"></a>第五章 选择结构</h1><p><strong>选择结构需要根据条件来决定程序的走向，而条件通常是关系表达式或逻辑表达式。</strong><br><code>关系和逻辑</code></p>
+<h2 id="关系运算符和关系表达式"><a href="#关系运算符和关系表达式" class="headerlink" title="关系运算符和关系表达式"></a>关系运算符和关系表达式</h2><p>关系运算符：&gt; , &lt; , &#x3D;&#x3D; , &gt;&#x3D; , &lt;&#x3D; , !&#x3D; </p>
+<p>关系表达式： 表达式最后进行的是关系运算，其值为逻辑值0，1。</p>
+<p><strong>表达式的求解一次只能进行一个运算符的运算。</strong></p>
+<h2 id="逻辑运算符和逻辑表达式"><a href="#逻辑运算符和逻辑表达式" class="headerlink" title="逻辑运算符和逻辑表达式"></a>逻辑运算符和逻辑表达式</h2><p>逻辑运算符：&amp;&amp;（逻辑与） 、 ||（逻辑或） 、 ！（逻辑非）</p>
+<p>C语言中，任何表达式（包括变量、常量）都有逻辑值，只要表达式的值非0，则认为其逻辑值为真（即1），只有表达式的值为0，其逻辑值才为假。</p>
+<p><strong>短路效应</strong>：&amp;&amp;（与） 、 ||（或）先计算运算符左边的式子，一旦确定整个表达式的值，右边就不再进行计算。<code>“或”的左侧为真，其值必为真，“与”的左侧为假，其值必假。</code></p>
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>if语句的使用说明：<br>1.if语句后面括号中的表达式可以是任何类型的表达式，不管什么类型的表达式，都取他的逻辑值；<br>2.if或else后面只能一条语句（<em>复合语句</em>）；<br>3.if或else的子句可以是空语句；<br>4.if语句可以没有else分支。</p>
+<p><strong>else总是与他前面最近的、尚未配对的if配对。</strong></p>
+<h2 id="条件运算符和表达式"><a href="#条件运算符和表达式" class="headerlink" title="条件运算符和表达式"></a>条件运算符和表达式</h2><p>条件运算符” ？: “<br>表达式1？表达式2：表达式3</p>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><p><strong>若语句组中没有break，则继续顺序执行。</strong></p>
+<p>switch语句的使用说明：<br>1.switch后面的括号中表达式的类型以及每个常量表达式的类型，都可以是字符型、逻辑型、整型，但不能是float或double型，因为实数的存储有些是不准确的;<br>2.每个语句都可以有若干条语句，不需要加大括号；<br>3.常量表达式中不能含有变量，且各个常量表达式的值互不相同；<br>4.常量表达式的顺序和default的位置，可以是任意顺序，任意位置；<code>但不等于case和default的位置可以随意互换</code><br>5.可以没有default；<br>6.break语句的作用是跳出她所在的switch。对于嵌套的switch，若break处于内层switch，则她只跳出内层switch，外层switch可以继续执行。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -171,7 +256,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="post-title-link" itemprop="url">第四章顺序结构</a>
+            <a href="/2022/03/31/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="post-title-link" itemprop="url">第四章 顺序结构</a>
         </h2>
 
         <div class="post-meta">
@@ -188,7 +273,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-02 09:01:47" itemprop="dateModified" datetime="2022-04-02T09:01:47+08:00">2022-04-02</time>
+                <time title="修改时间：2022-04-05 14:46:29" itemprop="dateModified" datetime="2022-04-05T14:46:29+08:00">2022-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,22 +299,25 @@
           <h1 id="第四章-顺序结构"><a href="#第四章-顺序结构" class="headerlink" title="第四章 顺序结构"></a>第四章 顺序结构</h1><p><strong>顺序结构的程序总是按照由上而下的顺序执行</strong><br><code>赋值和输入输出</code></p>
 <h2 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h2><p>赋值表达式后面加一个分号，就是赋值语句。<br>变量 &#x3D; 表达式 ； <code>常量和变量是最简单的表达式</code></p>
 <h3 id="赋值的几种数据处理方式"><a href="#赋值的几种数据处理方式" class="headerlink" title="赋值的几种数据处理方式"></a>赋值的几种数据处理方式</h3><p>1.变量和表达式结果的存储方式相同：</p>
-<pre><code>1）若变量和表达式结果长度相同，则原样复制。
-2）若变量比表达式结果“短”，则只截取低位部分。00000000 00000001 =&gt; 00000001
-3）若变量比表达式结果“长”，则进行符号位扩展。
+<pre><code>1）若变量和表达式结果长度相同，则原样复制
+2）若变量比表达式结果“短”，则只截取低位部分，多于字节丢弃（溢出）
+00000000 00000001 =&gt; 00000001
+3）若变量比表达式结果“长”，则进行符号位扩展
 11111111 11111111 =&gt; 11111111 11111111 11111111 11111111
 </code></pre>
 <p><code>当进行符号位扩展时，如果出现字符数据赋值给整型变量时，存在两种情况：如果字符的ASCII的码值不超过127，则还是用符号位扩展；若超过了127，用0还是用1，取决于机器</code></p>
 <p>2.变量和表达式结果的存储方式不同:转换存储方式再进行存储。</p>
 <h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>内存中的一段存储区域，用来临时存放一些数据。</p>
+<p><code>在缓冲文件系统中，当一个程序开始运行时，系统会自动给键盘和显示器分配缓冲区，即只要程序开始运行，内存中就已经有键盘缓冲区和显示器缓冲区。键盘缓冲区用来存放用户从键盘输入的数据。当用户输入完整数据并按Enter键时，这些数据就被送入缓冲区。</code></p>
+<p><strong>用户输入的任何数据，都是作为一个个字符存放在缓冲区中。</strong></p>
 <p>getchar（）:从键盘缓冲区读取一个字符（只取第一个字符）返回，返回值是所读字符的ASCII码值。</p>
-<p>若键盘缓冲区有字符，则取第一个字符返回；若键盘缓冲区没有字符，等待用户输入，直到用户输入数据为止。</p>
+<p>若键盘缓冲区有字符，则<strong>取第一个字符</strong>返回；若键盘缓冲区没有字符，等待用户输入，直到用户输入数据为止。</p>
 <p><code>一个程序刚运行时，缓冲区总是空的。</code></p>
 <p><em>putchar（）</em></p>
-<p>:*<code>P66</code><br>scanf() 格式注意一一对应</p>
+<p>:*<code>P66</code><br>scanf() 格式注意一一对应。</p>
 <p><strong>用scanf（）输入数据时不能规定精度。</strong></p>
-<p>1.两个数值型数据，通常要用分隔符分开。<br>2.若不加分隔符系统也能把数据分开，则不必加。<br>    （1)若格式控制字符串中规定了数据宽度，输入时可以不要分隔符。<code>%2d</code><br>    （2)读取数据时，若遇到了非法字符则认为数据结束。<br>    （3）字符型数据前后都不需要分隔符。<br>    <code>一是因为分隔符也是字符，二是因为字符都是单个的，不需要分隔。</code><br>3.若格式控制字符串中除了%开头的组合外还有其它字符，则输入时必须原样输入。<br>4.若格式控制字符串中含有空白符，则输入数据中对应的空白符将被读取并被丢弃，即使这些空白字符是连续的几个。</p>
-<p>**% *d**把读到的数据消耗掉</p>
+<p>1.两个数值型数据，通常要用分隔符分开；<br>2.若不加分隔符系统也能把数据分开，则不必加；<br>    （1)若格式控制字符串中规定了数据宽度，输入时可以不要分隔符。<code>%2d</code><br>    （2)读取数据时，若遇到了非法字符则认为数据结束。<br>    （3）字符型数据前后都不需要分隔符。<br>    <code>一是因为分隔符也是字符，二是因为字符都是单个的，不需要分隔。</code><br>3.若格式控制字符串中除了%开头的组合外还有其它字符，则输入时必须原样输入；<br>4.若格式控制字符串中含有空白符，则输入数据中对应的空白符将被读取并被丢弃，即使这些空白字符是连续的几个。</p>
+<p>**% *d**把读到的数据消耗掉。</p>
 
       
     </div>
@@ -280,7 +368,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-02 15:03:58" itemprop="dateModified" datetime="2022-04-02T15:03:58+08:00">2022-04-02</time>
+                <time title="修改时间：2022-04-05 11:23:07" itemprop="dateModified" datetime="2022-04-05T11:23:07+08:00">2022-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -303,20 +391,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="第三章-C编程基础知识"><a href="#第三章-C编程基础知识" class="headerlink" title="第三章 C编程基础知识"></a>第三章 C编程基础知识</h1><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><p>常量：编译时已经确定，在程序运行时不发生变化 。<code>常数不是常量；常量除了常数（整型常量、实型常量），还包括字符常量、字符串常量、符号常量等。</code><br>变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。<br>存储地址的变量称为<strong>指针变量</strong></p>
-<p>小端模式：存数据时先存低字节，再存高字节</p>
-<p>字节数：<strong>char 1，short 2，double 8，其余常用变量都为4</strong></p>
-<p>变量定义的位置应该在同级别的执行语句之前（C99取消了这条规定）</p>
-<p>标识符：<br>（1）<strong>英文字母、数字、下划线组成，不能以数字开头</strong><br>（2）区分大小写<br>（3）不允许用关键字作为标识符<br><code>关键字指已经赋予一定含义的字符序列，如int、float</code><br>（4）标识符有长度限制，超过限制，后面的字符不起作用<br> （5）见名知意</p>
+          <h1 id="第三章-C编程基础知识"><a href="#第三章-C编程基础知识" class="headerlink" title="第三章 C编程基础知识"></a>第三章 C编程基础知识</h1><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><p>常量：编译时已经确定，在程序运行时不发生变化 。<code>常数不是常量；常量除了常数（整型常量、实型常量），还包括字符常量、字符串常量、符号常量等。</code><br>变量：内存中的一段存储区域，程序运行过程中其值可变；变量必须先定义才能使用。<br>存储地址的变量称为<strong>指针变量</strong>。</p>
+<p>小端模式：存数据时先存低字节，再存高字节。</p>
+<p>字节数：<strong>char 1，short 2，double 8，其余常用变量都为4</strong>；<code>TC中int为2</code>。</p>
+<p>变量定义的位置应该在同级别的执行语句之前。（C99取消了这条规定）</p>
+<p>标识符：<br>（1）<strong>英文字母、数字、下划线组成，不能以数字开头</strong>；<br>（2）区分大小写；<br>（3）不允许用关键字作为标识符；<br><code>关键字指已经赋予一定含义的字符序列，如int、float</code><br>（4）标识符有长度限制，超过限制，后面的字符不起作用；<br> （5）见名知意；</p>
 <p>每个变量都有值和地址两个属性；<code>但不是仅有这两个属性，还可以有类型等属性</code><br>变量的值指的是变量在内存中所存的内容；<br>变量的地址指的是变量在内存中所处的位置，其起始位置称为变量的地址。</p>
 <p>定义变量的目的是为了存储数据。</p>
 <p><strong>赋值</strong>：在给变量分配空间的任务完成后，再给变量存放数据，赋值就是存储：把赋值号右边表达式的值计算出来然后存储到左边变量的内存空间。（两次执行）<br><strong>赋初值</strong>：再给变量分配空间的时候就向其中存放数据。（一次执行完）</p>
 <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>C语言的数据类型分为基本类型和构造类型，基本类型指的是系统固有的类型，也是常用的类型；构造类型指的是用户自定义出来的类型。</p>
 <h3 id="整型数据"><a href="#整型数据" class="headerlink" title="整型数据"></a>整型数据</h3><p>程序中用到整型常量时，可以用3种进制：十进制、八进制和十六进制。<br>100的表示方式：十进制100，八进制0144、十六进制0x64；<strong>注意程序中不允许使用二进制</strong></p>
-<p>%d表示十进制输出整数，%o表示八进制，%x或%X表示十六进制，加上L或l表示输出长整数，加上h表示输出短整数，无符号整数用%u</p>
-<h3 id="实型数据"><a href="#实型数据" class="headerlink" title="实型数据"></a>实型数据</h3><h4 id="实型常量"><a href="#实型常量" class="headerlink" title="实型常量"></a>实型常量</h4><p>带小数点的常量称为实型常量</p>
-<p>（1）小数形式 <code>3.14</code> 当一个数是纯小数时，小数点前面的0可以省略<br>（2）<strong>指数形式 <code>1.25E-2 即1.25*10^-2</code> E前数字，E后整</strong><br>实型常量有单精度F&#x2F;f（float）和双精度L&#x2F;l（double）两种方式，有效数字分别为7位、15位，最后一位近似位。</p>
-<h4 id="实型数据的存储"><a href="#实型数据的存储" class="headerlink" title="实型数据的存储"></a>实型数据的存储</h4><p>实型数据的存储，对于单精度和双精度的数据，都是以浮点数的方式存储.<br>格式为：(符号)X M X2^n，其中，n是指数，M必须满足：1.0 &lt;&#x3D; M &lt; 2.0<br><code>30.0表示为 +1.875 X 2^4</code></p>
+<p>%d表示十进制输出整数，%o表示八进制，%x或%X表示十六进制，加上L或l表示输出长整数，加上h表示输出短整数，无符号整数用%u。</p>
+<h3 id="实型数据"><a href="#实型数据" class="headerlink" title="实型数据"></a>实型数据</h3><h4 id="实型常量"><a href="#实型常量" class="headerlink" title="实型常量"></a>实型常量</h4><p>带小数点的常量称为实型常量。</p>
+<p>（1）小数形式 <code>3.14</code> <strong>当一个数是纯小数时，小数点前面的0可以省略</strong>。<br>（2）<strong>指数形式 <code>1.25E-2 即1.25*10^-2</code> E前数字，E后整</strong></p>
+<p><strong>实数只能用十进制表示。</strong></p>
+<p>实型常量有单精度F&#x2F;f（float）和双精度L&#x2F;l（double）两种方式，有效数字分别为7位、15位，最后一位近似位。</p>
+<h4 id="实型数据的存储"><a href="#实型数据的存储" class="headerlink" title="实型数据的存储"></a>实型数据的存储</h4><p>实型数据的存储，对于单精度和双精度的数据，都是以浮点数的方式存储。<br>格式为：(符号)X M X2^n，其中，n是指数，M必须满足：1.0 &lt;&#x3D; M &lt; 2.0<br><code>30.0表示为 +1.875 X 2^4</code></p>
 <p>float型数据存储空间的分配：</p>
 <table>
 <thead>
@@ -332,32 +422,33 @@
 <td>占23位[第22位~第00位]</td>
 </tr>
 <tr>
-<td><code>P43</code></td>
+<td><code>部位存储待补充P43</code></td>
 <td></td>
 <td></td>
 </tr>
 </tbody></table>
 <p>实数的存储不都是精确的。</p>
-<p>%f小数形式输出，默认输出6位小数（其他形式%.2f,指定两位小数）<br>%e(%E)指数形式输出，小数点前有且仅有1位非0的有效数字</p>
+<p>%f小数形式输出，默认输出6位小数（其他形式%.2f,指定两位小数）<br>%e(%E)指数形式输出，小数点前有且仅有1位非0的有效数字。</p>
 <h3 id="字符型数据"><a href="#字符型数据" class="headerlink" title="字符型数据"></a>字符型数据</h3><p><strong>单个的字符是字符常量</strong></p>
-<p>字符放 ‘  ‘ 中，<strong>单引号</strong>有新的含义-定界符</p>
-<p>反斜线   \   转义字符</p>
-<p><strong>C语言认为字符也有大小，即其ASCII码。</strong><br>48 - 0<br>57 - 9<br>65 - A<br>90 - Z<br>97 - a<br>122 -z<br>大小写字母差了32</p>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>置于<strong>双引号</strong>中，双引号中可以没有字符，表示空串</p>
-<p><strong>C语言只有字符串常量，没有字符串变量</strong></p>
-<p>存储字符串时，最后多存一个空字符’\0’<br>空字符的ASCII是0，表示’\0’</p>
-<p>空字符和空格不是同一个字符，空为0，空格为32<br><strong>“A”和’A’不同，字符串结尾多一个空字符。</strong></p>
+<p>字符放 ‘  ‘ 中，<strong>单引号</strong>有新的含义-定界符；</p>
+<p>反斜线   \   转义字符。</p>
+<p><strong>C语言认为字符也有大小，即其ASCII码。</strong></p>
+<p><strong>48 - 0<br>57 - 9<br>65 - A<br>90 - Z<br>97 - a<br>122 -z<br>大小写字母差了32</strong></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>置于<strong>双引号</strong>中，双引号中可以没有字符，表示空串。</p>
+<p><strong>C语言只有字符串常量，没有字符串变量</strong>。</p>
+<p>存储字符串时，最后多存一个空字符’\0’。<br>空字符的ASCII是0，表示’\0’。</p>
+<p>空字符和空格不是同一个字符，空为0，空格为32。<br><strong>“A”和’A’不同，字符串结尾多一个空字符。</strong></p>
 <p>输出：%s</p>
-<p><strong>对于数据的存取</strong>：char型数据存储其ASCII码值，short、int、long型数据存储补码，float和double型数据按IEEE754标准所规定的格式存储</p>
-<h2 id="符号常量和常变量"><a href="#符号常量和常变量" class="headerlink" title="符号常量和常变量"></a>符号常量和常变量</h2><h3 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h3><p>符号常量的定义是一条命令，不是语句，后面<strong>不需要</strong>分号</p>
-<p><em>编译预处理命令，称为宏定义</em></p>
-<p>使用方便、便于修改、增加可读性</p>
-<p>符号常量只是一个符号，不是变量，<strong>内存中没有空间</strong>，所以不能赋值<br><code> #define PI = 3.1415926 X</code><br><code>#define PI   3.1415926 √</code></p>
+<p><strong>对于数据的存取</strong>：char型数据存储其ASCII码值，short、int、long型数据存储补码，float和double型数据按IEEE754标准所规定的格式存储。</p>
+<h2 id="符号常量和常变量"><a href="#符号常量和常变量" class="headerlink" title="符号常量和常变量"></a>符号常量和常变量</h2><h3 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h3><p>符号常量的定义是一条命令，不是语句，后面<strong>不需要</strong>分号。</p>
+<p><em>编译预处理命令，称为宏定义</em>。</p>
+<p>使用方便、便于修改、增加可读性。</p>
+<p>符号常量只是一个符号，不是变量，<strong>内存中没有空间</strong>，所以不能赋值。<br><code> #define PI = 3.1415926 X</code><br><code>#define PI   3.1415926 √</code></p>
 <p><code>符号常量名通常使用大写字母</code></p>
 <h3 id="常变量"><a href="#常变量" class="headerlink" title="常变量"></a>常变量</h3><p>const开头</p>
-<p><strong>常变量定义时必须初始化</strong>，为变量赋初值</p>
-<p><strong>常变量的定义是一条语句，后面有分号</strong></p>
-<p><strong>常变量只可以赋初值，不能赋值，因为赋值等于改写</strong></p>
+<p><strong>常变量定义时必须初始化</strong>，为变量赋初值。</p>
+<p><strong>常变量的定义是一条语句，后面有分号</strong>。</p>
+<p><strong>常变量只可以赋初值，不能赋值，因为赋值等于改写</strong>。</p>
 <p>定义常变量之后，程序中可以随时使用它，但不能改变它。</p>
 <h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>求余运算的结果，其符号应该与 % 前面那个数的符号相同。</p>
 <p><strong>求余的两个量必须是整数。</strong></p>
@@ -367,7 +458,7 @@
 <h3 id="赋值运算符和赋值表达式"><a href="#赋值运算符和赋值表达式" class="headerlink" title="赋值运算符和赋值表达式"></a>赋值运算符和赋值表达式</h3><p>左值： 可以出现在赋值号左面的式子。</p>
 <p><strong>左值必须有内存空间且允许赋值，常用的左值是变量，但常变量不是左值</strong><br><code>常变量允许赋初值，但不允许赋值</code></p>
 <p>赋值表达式也有值，一个赋值表达式的值，等于赋值后左边变量的值。</p>
-<h3 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h3><p>自增自减运算符：++、–<br>表达式++i的值是加1之后的i（先+1），而表达式i++的值是加1之前的i（运算后i+1）</p>
+<h3 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h3><p>自增自减运算符：++、–<br>表达式++i的值是加1之后的i（先+1），而表达式i++的值是加1之前的i（运算后i+1）。</p>
 <p><code>相当于赋值运算，因此只能作用于变量，故无法作用于表达式和常量</code></p>
 <p>逗号运算符：，<br>双目运算符，优先级最低，逗号表达式的值等于逗号后面式子的值。<code>先求解前面表达式，后求解后面表达式，值为后面的表达式，可不断嵌套式子1,式子2,式子3······</code></p>
 <p>类型转换运算符：把表达式的值强制转化为指定的类型。<br>格式：（类型名）（表达式）</p>
@@ -410,7 +501,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="post-title-link" itemprop="url">第二章C程序</a>
+            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="post-title-link" itemprop="url">第二章 C程序</a>
         </h2>
 
         <div class="post-meta">
@@ -427,7 +518,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-01 20:54:55" itemprop="dateModified" datetime="2022-04-01T20:54:55+08:00">2022-04-01</time>
+                <time title="修改时间：2022-04-05 10:38:39" itemprop="dateModified" datetime="2022-04-05T10:38:39+08:00">2022-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -460,16 +551,16 @@
 <p>注释对程序运行结果无影响，编译时注释都被忽略</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 跨行注释 */</span><br><span class="line">//单行注释</span><br></pre></td></tr></table></figure>
 
-<p>在C语言中，<strong>存储数据必须定义变量</strong><br><strong>变量</strong>是内存的一段存储区域，用来存数据；参数也是变量,用来记住主函数给的已知数据</p>
+<p>在C语言中，<strong>存储数据必须定义变量</strong>。<br><strong>变量</strong>是内存的一段存储区域，用来存数据；参数也是变量,用来记住主函数给的已知数据。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%d含义是从键盘取回一个整数</span><br><span class="line">&amp;a表示整数要存放的位置</span><br><span class="line">&amp;是取地址运算符</span><br></pre></td></tr></table></figure>
-<h2 id="C程序的构成"><a href="#C程序的构成" class="headerlink" title="C程序的构成"></a>C程序的构成</h2><p>C程序构成特点：<br>1程序有一个或多个源文件<code>一般包括编译预处理命令、函数定义等内容</code>组成；<br>2.函数时C程序重要组成部分；<br>3.一个函数有且只有一个主函数，主函数可在其他函数前、后、中；&#96;&#96;&#96;程序的执行总是从主函数开始，当主函数运行完，程序也就结束。<br>4.函数是由函数头和函数体组成；</p>
+<h2 id="C程序的构成"><a href="#C程序的构成" class="headerlink" title="C程序的构成"></a>C程序的构成</h2><p>C程序构成特点：<br>1.程序由一个或多个源文件<code>一般包括编译预处理命令、函数定义等内容</code>组成；<br>2.函数时C程序重要组成部分；<br>3.一个函数有且只有一个<strong>主函数</strong>，主函数可在其他函数前、后、中；<strong>程序的执行总是从主函数开始，当主函数运行完，程序也就结束</strong>；<br>4.函数是由函数头和函数体组成；</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">函数头指大括号&#123;&#125;之前的部分</span><br><span class="line">函数体指大括号所包含的内容（可为空）</span><br><span class="line">函数体的内容按顺序可分为声明部分（数据声明、函数声明）和执行部分（数据输入部分、计算部分、输出部分）</span><br></pre></td></tr></table></figure>
-<p>5.每个声明和语句的最后必须有一个分号，分号表示声明或语句结束；<br>  一行代码可以写一个或几个语句，也可一个语句写在几行上<br>6.输入输出靠调用函数完成<br>7.注释可以对整个程序或整个函数的说明，也可以是某一条语句的说明</p>
-<p>Save存盘，Write to另存相当于Save as</p>
+<p>5.每个声明和语句的最后必须有一个分号，分号表示声明或语句结束；<br>  <code>一行代码可以写一个或几个语句，也可一个语句写在几行上</code><br>6.输入输出靠调用函数完成；<br>7.注释可以对整个程序或整个函数的说明，也可以是某一条语句的说明；</p>
+<h2 id="C编译器"><a href="#C编译器" class="headerlink" title="C编译器"></a>C编译器</h2><p>Save存盘，Write to另存相当于Save as。</p>
 <p>编译发现 <strong>语法错误</strong>时，光条停在第一个错误语句的最后一行，因此检查错误不仅检查光条所在行，还要检查光条上面一行或几行，直到上一个分号为止。</p>
-<p>程序的语法错误在编译时发现，逻辑错误需要调试</p>
-<p>C编译器部分略</p>
-<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a><em>习题</em></h2><h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>1.C程序的执行从主函数开始，到源文件的最后一个函数结束（X） <code>主-主</code><br>2.C语言程序必须包含库函数 （√）<br><strong>3.一个C源文件必须包含一个main函数（X） <code>C源文件 ！= 程序</code><br>4.目标函数的内容不是二进制的，故不能运行（X）<br>5.目标函数的内容是机器指令，故运行程序实际上就是执行目标程序，然后由可执行文件输出结果（X）<br>6.可执行文件的内容是机器指令，在磁盘上，要装入内存才能运行（√）</strong></p>
+<p>程序的语法错误在编译时发现，逻辑错误需要调试。</p>
+<p>C编译器调试操作部分略</p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a><em>习题</em></h2><h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>1.C程序的执行从主函数开始，到源文件的最后一个函数结束（X） <code>主-主</code><br>2.C语言程序必须包含库函数 （√）<br><strong>3.一个C源文件必须包含一个main函数（X） <code>C源文件 ！= 程序</code><br>4.目标函数的内容不是二进制的，故不能运行（X）<code>目标程序是源程序编译形成的obj文件。</code><br>5.目标函数的内容是机器指令，故运行程序实际上就是执行目标程序，然后由可执行文件输出结果（X）<br>6.可执行文件的内容是机器指令，在磁盘上，要装入内存才能运行（√）</strong></p>
 <h3 id="叙述"><a href="#叙述" class="headerlink" title="叙述"></a>叙述</h3><p>1.怎样区分数据声明和执行语句？函数体中，对于函数声明和执行语句的位置，有什么要求？<br>解：数据声明都是int&#x2F;float&#x2F;char&#x2F;double……这样的关键字（代表数据类型）开头的，不是这样的关键字开头的语句，是执行语句。C89规定，级别相同的语句中，数据声明语句都必须在第一条执行语句之前。<br>2.使用TC编译源程序时，总出现打不开有文件的错误提示，一般来说是什么原因？<br>解：可能没有正确设置Option&#x2F;Derectries目录。</p>
 
       
@@ -504,7 +595,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="post-title-link" itemprop="url">第一章基础知识</a>
+            <a href="/2022/03/30/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="post-title-link" itemprop="url">第一章 基础知识</a>
         </h2>
 
         <div class="post-meta">
@@ -521,7 +612,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-01 20:55:11" itemprop="dateModified" datetime="2022-04-01T20:55:11+08:00">2022-04-01</time>
+                <time title="修改时间：2022-04-05 10:13:28" itemprop="dateModified" datetime="2022-04-05T10:13:28+08:00">2022-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -568,11 +659,11 @@
 <p>高级语言： 可移植性好，接近自然语言易懂易学</p>
 <p>高级语言的执行方式：<br>1）解释方式：对一句语句解释后执行，才对下一句语句处理；翻译出来的计算机指令并不存盘（不生成目标代码），执行完后这些二进制指令就丢失了。若程序想执行第二次，则重头翻译执行。<code>行程表式，执行效率低</code><br>2）编译方式：所有语句都翻译成机器指令，并用obj文件存盘，与库函数链接后形成exe可执行文件后,可反复运行。<code> .c  通过编译形成 .obj  经过连接  形成 .exe</code></p>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>程序 &#x3D; 算法 + 数据结构 Niklaus Wirth</p>
-<p>数据结构指的是数据的组织形式和表示方式</p>
-<p>算法就是用计算机求解问题的操作方法和步骤</p>
+<p>数据结构指的是数据的组织形式和表示方式。</p>
+<p><strong>算法</strong>就是用计算机求解问题的操作方法和步骤，<code>不知道算法就无法编程，故算法是程序的灵魂。</code></p>
 <h3 id="算法的特性"><a href="#算法的特性" class="headerlink" title="算法的特性"></a>算法的特性</h3><p>1.有穷性<br>2.确定性<br>3.有效性<br>4.有输入<br>5.有输出</p>
 <h3 id="算法的表示"><a href="#算法的表示" class="headerlink" title="算法的表示"></a>算法的表示</h3><p>1.自然语言<br>2.伪代码<br>3.传统流程图<br>4.N-S流程图</p>
-<p>程序的3种基本结构：顺序结构、选择结构、循环结构</p>
+<p>程序的3种基本结构：顺序结构、选择结构、循环结构。</p>
 <h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a><em>习题</em></h2><p>如果用两个字节表示整数，-1、-2、-3······其补码分别为：<br>-1:     11111111 11111111（全是1，就是-1）<br>-2:     11111111 11111110（比-1少了1，就是-2）<br>-3:     11111111 11111101（比-1少了2个1，就是-3）<br>-4:     11111111 11111100（比-1少了3个1，就是-4）<br>-5:     11111111 11111011（比-1少了4个1，就是-5）<br>……<br>-32765:     10000000 00000011<br>-32766:     10000000 00000010<br>-32767:     10000000 00000001<br>-32768:     10000000 00000000（比-1少了01111111 11111111）</p>
 <p>所以<strong>如果用两个字节存储整数，所能存储最大数为32767，最小为-32768</strong></p>
 
@@ -822,14 +913,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
