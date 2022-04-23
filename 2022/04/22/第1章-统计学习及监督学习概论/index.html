@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="统计学习统计学习 statistical learning 也叫做统计机器学习 statistical machine learning 统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。 统计学习的特点统计学习的主要特点：  统计学习以计算机及网络为平台； 以数据为研究对象，是数据驱动的学科； 目的是对数据进行预测与分析； 以方法为中心，统计学习方法构建模型并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第1章 统计学习及监督学习概论">
+<meta property="og:url" content="http://example.com/2022/04/22/%E7%AC%AC1%E7%AB%A0-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%8F%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/index.html">
+<meta property="og:site_name" content="潜龙渊">
+<meta property="og:description" content="统计学习统计学习 statistical learning 也叫做统计机器学习 statistical machine learning 统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。 统计学习的特点统计学习的主要特点：  统计学习以计算机及网络为平台； 以数据为研究对象，是数据驱动的学科； 目的是对数据进行预测与分析； 以方法为中心，统计学习方法构建模型并">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-22T07:41:55.000Z">
+<meta property="article:modified_time" content="2022-04-23T08:54:41.095Z">
+<meta property="article:author" content="君不二">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/04/22/%E7%AC%AC1%E7%AB%A0-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%8F%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>第1章 统计学习及监督学习概论 | 潜龙渊</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">潜龙渊</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/%E7%AC%AC1%E7%AB%A0-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%8F%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="君不二">
+      <meta itemprop="description" content="高山仰止 景行行之">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潜龙渊">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第1章 统计学习及监督学习概论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-22 15:41:55" itemprop="dateCreated datePublished" datetime="2022-04-22T15:41:55+08:00">2022-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-23 16:54:41" itemprop="dateModified" datetime="2022-04-23T16:54:41+08:00">2022-04-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">统计学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><p>统计学习 statistical learning 也叫做统计机器学习 statistical machine learning</p>
+<p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测与分析的一门学科。</p>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><p>统计学习的主要特点：</p>
+<ol>
+<li>统计学习以<strong>计算机及网络为平台</strong>；</li>
+<li>以<strong>数据为研究对象</strong>，是数据驱动的学科；</li>
+<li><strong>目的</strong>是对数据进行预测与分析；</li>
+<li>以<strong>方法为中心</strong>，统计学习方法构建模型并应用模型进行预测与分析。</li>
+</ol>
+<p>赫尔伯特·西蒙定义“学习”是：如果一个系统能够通过在执行某个过程改进它的性能，这就是学习。</p>
+<p>按照这样的观点，统计学习就是计算机系统通过运用数据及统计方法提高系统性能的机器学习。</p>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2><p>统计学习研究的对象是数据，它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，最后回到对数据<br>的分析预测。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的<strong>前提</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同类数据是指具有某种共同性质的数据.</span><br></pre></td></tr></table></figure>
+<p>数据分为由连续变量和离散变量表示的类型。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。</p>
+<p>对数据的预测是通过构建概率统计模型实现的， 统计学习中的目标就是考虑学习什么样的模型<br>和如何学习模型，以使模型能够对数据及进行准确的预测与分析<br>，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。</p>
+<p>统计学习由<strong>监督学习（supervised learning）、无监督学习（unsupervised learning）和强化学习<br>（reinforcement learnin）</strong> 等组成。</p>
+<p>统计学习方法：从给定的、有限的、用于学习的训练数据（training data）集合出发，<br>假设数据是独立同分布产生的；并且假设要学习的模型属于某个函数的集合，称为假设空间（hypothesis space）<br>；应用某个评价准则（evaluation criterion），从假设空间中选取一个最优模型，使它对已知的训练数据<br>及未知的测试数据（test data）在给定的评价准则下有最优的预测；</p>
+<p>统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称其为统计学习方法的三要素，<br>简称为<strong>模型（model）、策略（strategy）和算法（algorithm）</strong>。</p>
+<p>实现统计学习方法的步骤如下 ：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习研究一般包括统计学习方法、统计学习理论及统计学习应用三个方面。</p>
+<ol>
+<li>统计学习方法的研究旨在开发新的学习方法；</li>
+<li>统计学习理论的研究在于探究统计学习方法的有效性与效率，以及统计学习的基本理论问题。</li>
+<li>统计学习应用的研究主要考虑将统计学习方法应用到实际问题中去，解决实际问题。</li>
+</ol>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><ol>
+<li>统计学习是处理海量数据的有效办法。在信息爆炸的时代，海量数据的处理与运用是人们必然的需求。</li>
+<li>统计学习是计算机智能化的有效手段。智能化是计算机发展的必然趋势，也是计算机技术研究与开发的主要目标。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。计算机科学由三维组成：<strong>系统、计算、信息。</strong></li>
+</ol>
+<h1 id="统计学习的种类"><a href="#统计学习的种类" class="headerlink" title="统计学习的种类"></a>统计学习的种类</h1><p>统计学习或机器学习一般包括监督学习、无监督学习、强化学习。</p>
+<h2 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h2><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>监督学习是指从标注数据中学习预测模型的机器学习问题。<br>监督学习的本质是学习输入到输出的映射的统计规律。</p>
+<h4 id="输入、输出和特征空间"><a href="#输入、输出和特征空间" class="headerlink" title="输入、输出和特征空间"></a>输入、输出和特征空间</h4><p>监督学习中，将输入输出所有可能取值的集合分别成为输入空间（input space）与输出空间，通常输出空间远远小于输入空间。</p>
+<p>每个具体的输入是一个实例（instance），通常由特征向量（feature vector）表示。这时，所有的特征向量存在的<br>空间称为特征空间，特征空间的每一维对应一个特征。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure>
+<ol>
+<li>输入变量与输出变量均为<strong>连续变量</strong>的预测问题称为<strong>回归问题</strong>；</li>
+<li>输出变量为有限个<strong>离散变量</strong>的预测问题称为<strong>分类问题</strong>；</li>
+<li>输入变量与输出变量均为<strong>变量序列</strong>的预测问题称为<strong>标注问题</strong>。</li>
+</ol>
+<h4 id="联合概率分布"><a href="#联合概率分布" class="headerlink" title="联合概率分布"></a>联合概率分布</h4><p>监督学习<strong>假设</strong>输入与输出的随机变量X和Y都遵循联合概率分布P（X,Y）。<br>P(X,Y)表示分布函数，或分布密度函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">假定这一联合概率分布存在，但对学习系统而言，联合概率分布的具体定义是未知的.</span><br></pre></td></tr></table></figure>
+
+<h4 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h4><p><strong>监督学习的目的在于学习一个由输入到输出的映射（找到最好的模型）。</strong></p>
+<p>模型属于输入空间到输出空间的映射的集合，这个集合就是假设空间（hypothesis space）。<br>假设空间的确定意味着学习的范围的确定。</p>
+<p>监督学习的模型可以是概率模型或非概率模型，由条件概率分布P(Y|X)或决策函数（decision function）<br>Y&#x3D;f(X)表示，对具体的输入进行相应的输出预测时，写作P（y|x）或者y &#x3D; f(x)。</p>
+<h4 id="问题的形式化"><a href="#问题的形式化" class="headerlink" title="问题的形式化"></a>问题的形式化</h4><p>标注的训练数据集往往是人工给出的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure>
+
+<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>无监督学习是指从无标注数据中学习预测模型的机器学习问题，无标注数据是自然得到的数据。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure>
+
+<h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><p>强化学习是指智能系统在与环境的连续互动中学习最有行为策略的机器学习问题。强化学习的本质是<strong>学习最优的序贯决策</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">假设智能系统与环境的互动基于马尔可夫决策过程（Markov decision process），智能系统能观测到的是与环境互动得到的数据序列</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure>
+
+<h3 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h3><p>半监督学习（semi-supervised learing）是指利用标注数据和未标注数据学习预测模型的机器学习问题<br>。半监督学习旨在利用未标注数据中的信息，辅助标注数据，<br>进行监督学习，以较低的成本达到较好的学习效果。</p>
+<p>主动学习（active learning）是指机器不断地主动给出实例让教师进行标注，<br>然后利用标注数据学习预测模型的机器学习问题。主动学习的目标是找出对学习最有帮助的实例让教师标注，<br>以较小的代价，达到较好的学习效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通常的监督学习使用给定的标注数据，往往是随机得到的，可以看作是“被动学习”.</span><br></pre></td></tr></table></figure>
+<h2 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h2><ol>
+<li>概率模型与非概率模型</li>
+<li>线性模型与非线性模型</li>
+<li>参数化模型与非参数化模型</li>
+</ol>
+<h2 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h2><p>统计学习根据算法可以分为在线学习（online learning）与批量学习（batch learning）。</p>
+<p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>批量学习一次接受所有数据，学习模型，之后进行预测。</p>
+<h2 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h2><p>###贝叶斯学习<br>贝叶斯学习（Bayesian learning），又称为贝叶斯推理（inference）。</p>
+<p>在概率模型的学习和推理中，利用贝叶斯定理 ，计算给定数据条件下模型的条件概率，<br>即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。</p>
+<p><strong>贝叶斯学习的特点是：将模型·、未观测要素及其参数用变量表示，使用模型的先验分布。</strong></p>
+<p>###核方法</p>
+<p>核方法（kernel method）是使用核函数表示和学习非线性模型的一种机器学习方法。</p>
+<p>把线性模型扩展到非线性模型，直接的做法是显式的定义从输入空间（低维空间）到<br>特征空间（高维空间）的映射，在特征空间进行内积计算。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/05/%E7%BC%96%E7%A8%8B/" rel="prev" title="编程">
+      <i class="fa fa-chevron-left"></i> 编程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">统计学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">统计学习的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">统计学习的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-number">1.3.</span> <span class="nav-text">统计学习的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">统计学习的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="nav-number">1.5.</span> <span class="nav-text">统计学习的研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-number">1.6.</span> <span class="nav-text">统计学习的重要性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">统计学习的种类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">基本分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.1.1.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E5%92%8C%E7%89%B9%E5%BE%81%E7%A9%BA%E9%97%B4"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">输入、输出和特征空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">联合概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">假设空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">问题的形式化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.1.2.</span> <span class="nav-text">无监督学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.1.3.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.1.4.</span> <span class="nav-text">半监督学习与主动学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E6%A8%A1%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">按模型分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB"><span class="nav-number">2.3.</span> <span class="nav-text">按算法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E6%8A%80%E5%B7%A7%E5%88%86%E7%B1%BB"><span class="nav-number">2.4.</span> <span class="nav-text">按技巧分类</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">君不二</p>
+  <div class="site-description" itemprop="description">高山仰止 景行行之</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">君不二</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
